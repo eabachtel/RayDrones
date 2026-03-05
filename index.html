@@ -3,48 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ray Price | Drone Services</title>
-  <meta name="description" content="Drone footage for car shows, events, and aerial photography. Follow for highlights and book a shoot." />
+  <title>The Drone Guy | Drone Solutions & Photography</title>
+  <meta name="description" content="The Drone Guy — Drone Solutions & Photography. Car shows, events, aerial photos and video. Book now." />
 
-  <!-- Open Graph for sharing -->
-  <meta property="og:title" content="Ray Price | Drone Services" />
-  <meta property="og:description" content="Drone footage for car shows, events, and aerial photography. Follow for highlights and book a shoot." />
+  <!-- Social share -->
+  <meta property="og:title" content="The Drone Guy | Drone Solutions & Photography" />
+  <meta property="og:description" content="Car shows, events, aerial photos and video. Book now." />
   <meta property="og:type" content="website" />
+
+  <!-- Font: clean, techy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #0b0b10;
-      --card: rgba(255,255,255,0.06);
-      --stroke: rgba(255,255,255,0.12);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
+      /* Business card palette */
+      --bg: #1C1E25;            /* deep charcoal */
+      --bg2:#14161c;            /* darker edge */
+      --card: rgba(255,255,255,0.05);
+      --stroke: rgba(255,255,255,0.14);
+
+      --text: #D9D9D9;          /* light gray */
+      --muted:#9FA3AA;          /* softer gray */
+
+      --accent:#B4D455;         /* neon drone green */
+      --accent2:#8FAE3C;        /* darker green for depth */
+
       --shadow: 0 18px 60px rgba(0,0,0,0.55);
       --radius: 22px;
       --pad: 22px;
       --max: 980px;
-
-      /* Accent colors (easy to change to match the business card) */
-      --a1:#00D3FF;  /* main accent from card */
-      --a2:#00D3FF;  /* same, keeps it consistent */
-      --a3:#7C4DFF;  /* optional secondary, or repeat a1 */
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color: var(--text);
-      background:
-            radial-gradient(900px 500px at 20% 0%, rgba(0,211,255,0.18), transparent 60%),
-            radial-gradient(900px 500px at 90% 20%, rgba(124,77,255,0.12), transparent 65%),
-  #0b0b10;
       min-height:100vh;
       display:flex;
       justify-content:center;
       padding: 28px 14px 56px;
+
+      /* Subtle glow + dark background */
+      background:
+        radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
+        radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
     }
 
     .wrap{width:100%; max-width: var(--max);}
+
+    /* Top bar */
     .top{
       display:flex;
       gap: 18px;
@@ -52,27 +63,42 @@
       justify-content:space-between;
       margin-bottom: 18px;
     }
-
     .brand{
       display:flex;
       gap: 14px;
       align-items:center;
     }
+
+    /* Brand mark that feels like the card */
     .logo{
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--a1), var(--a2), var(--a3));
-      box-shadow: 0 10px 30px rgba(109,94,252,0.25);
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(180,212,85,0.10);
+      border: 1px solid rgba(180,212,85,0.35);
+      box-shadow: 0 10px 30px rgba(180,212,85,0.12);
       display:grid;
       place-items:center;
       font-weight:800;
-      letter-spacing:0.5px;
+      letter-spacing:0.6px;
+      color: var(--accent);
+      position:relative;
+      overflow:hidden;
     }
+    .logo::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(180,212,85,0.28), transparent 45%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+
     .brand h1{
       font-size: 18px;
       line-height: 1.2;
       margin: 0;
+      letter-spacing: 0.2px;
     }
     .brand p{
       margin: 0;
@@ -87,31 +113,56 @@
       padding: 10px 14px;
       font-size: 13px;
       color: var(--muted);
-      backdrop-filter: blur(10px);
       display:flex;
       gap:10px;
       align-items:center;
       white-space:nowrap;
+      backdrop-filter: blur(10px);
     }
     .dot{
       width: 10px; height: 10px; border-radius: 50%;
-      background: #4cff7a;
-      box-shadow: 0 0 0 6px rgba(76,255,122,0.12);
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(180,212,85,0.10);
     }
 
+    /* Hero card */
     .hero{
       border: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
     }
+
+    /* Curved line vibe like the business card */
     .hero::before{
       content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(600px 250px at 30% 0%, rgba(109,94,252,0.35), transparent 70%),
-                  radial-gradient(600px 250px at 80% 20%, rgba(0,211,255,0.25), transparent 75%);
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(1200px 520px at 40% 10%, rgba(255,255,255,0.06), transparent 60%),
+        repeating-linear-gradient(
+          105deg,
+          rgba(255,255,255,0.00) 0px,
+          rgba(255,255,255,0.00) 18px,
+          rgba(255,255,255,0.04) 19px,
+          rgba(255,255,255,0.00) 20px
+        );
+      opacity:0.55;
+      pointer-events:none;
+      filter: blur(0.2px);
+    }
+
+    /* Soft swooshes */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background:
+        radial-gradient(closest-side at 15% 40%, rgba(180,212,85,0.12), transparent 60%),
+        radial-gradient(closest-side at 80% 60%, rgba(180,212,85,0.07), transparent 60%);
+      transform: rotate(-8deg);
       pointer-events:none;
     }
 
@@ -132,18 +183,16 @@
       line-height: 1.06;
       letter-spacing: -0.02em;
     }
-    .headline h2 span{
-      background: linear-gradient(90deg, var(--a2), var(--a1), var(--a3));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color: transparent;
+    .headline h2 .accent{
+      color: var(--accent);
+      text-shadow: 0 0 22px rgba(180,212,85,0.14);
     }
     .headline p{
       margin:0;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.55;
-      max-width: 60ch;
+      max-width: 62ch;
     }
 
     .ctaRow{
@@ -152,9 +201,10 @@
       gap: 12px;
       align-items:center;
     }
+
     .btn{
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
       border-radius: 16px;
       padding: 12px 14px;
@@ -167,14 +217,21 @@
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
       backdrop-filter: blur(10px);
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.10);}
-    .btnPrimary{
-      border: none;
-      background: linear-gradient(135deg, var(--a1), var(--a2), var(--a3));
-      color: #0b0b10;
-      box-shadow: 0 14px 45px rgba(0,211,255,0.12);
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(180,212,85,0.35);
+      background: rgba(255,255,255,0.08);
     }
-    .btnPrimary:hover{transform: translateY(-1px) scale(1.01);}
+
+    .btnPrimary{
+      border: 1px solid rgba(180,212,85,0.35);
+      background: linear-gradient(135deg, rgba(180,212,85,0.95), rgba(143,174,60,0.75));
+      color: #0f120d;
+      box-shadow: 0 14px 45px rgba(180,212,85,0.10);
+    }
+    .btnPrimary:hover{
+      transform: translateY(-1px) scale(1.01);
+    }
 
     .grid{
       display:grid;
@@ -191,25 +248,11 @@
       backdrop-filter: blur(10px);
     }
 
-    .kpis{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .kpi{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      padding: 14px;
-    }
-    .kpi .big{font-size: 20px; font-weight: 800; margin:0;}
-    .kpi .small{margin:4px 0 0; color: var(--muted); font-size: 12px;}
-
     .sectionTitle{
       margin: 0 0 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
-      letter-spacing: 0.02em;
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -224,14 +267,80 @@
       display:flex;
       justify-content:space-between;
       gap: 10px;
-      border: 1px solid var(--stroke);
+      border: 1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.04);
       border-radius: 16px;
       padding: 12px 12px;
       font-size: 14px;
       color: var(--muted);
     }
-    .list strong{color: var(--text); font-weight: 700;}
+    .list strong{
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .kpi{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .kpi .big{
+      font-size: 20px;
+      font-weight: 800;
+      margin:0;
+      color: var(--text);
+    }
+    .kpi .small{
+      margin:4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Influencer friendly: clips section */
+    .clips{
+      display:grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .clipGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .clip{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 14px;
+      min-height: 92px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .clip .label{
+      color: rgba(255,255,255,0.86);
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .clip .hint{
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    .clip a{
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration:none;
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .clip a:hover{ text-decoration: underline; }
 
     .footer{
       margin-top: 18px;
@@ -243,6 +352,7 @@
     @media (max-width: 860px){
       .grid{grid-template-columns: 1fr;}
       .kpis{grid-template-columns: 1fr;}
+      .clipGrid{grid-template-columns: 1fr;}
       .pill{display:none;}
     }
   </style>
@@ -250,12 +360,48 @@
 
 <body>
   <div class="wrap">
+
+    <script>
+      /* EDIT ONLY THESE */
+      const CONFIG = {
+        brand: "The Drone Guy",
+        tagline: "Drone Solutions & Photography",
+        logoText: "TDG",
+
+        headline: 'Drone solutions that <span class="accent">stand out</span> at car shows and events',
+        subhead: "Car shows, festivals, promotions, aerial photos and video. Social-ready edits and clean delivery.",
+
+        name: "Raymond Price",
+        phone: "910-939-8560",
+        email: "thedroneguyfive@gmail.com",
+
+        instagram: "https://instagram.com/YOUR_INSTAGRAM",
+        tiktok: "https://tiktok.com/@YOUR_TIKTOK",
+        facebook: "https://facebook.com/YOUR_FACEBOOK",
+
+        bookingSubject: "Drone Booking Request",
+
+        /* Optional: add 3 featured links (clips, reels, albums, etc.) */
+        clip1Label: "Latest Reel",
+        clip1Hint: "Link a fresh Instagram Reel or TikTok",
+        clip1Url: "https://example.com",
+
+        clip2Label: "Car Show Highlights",
+        clip2Hint: "YouTube, Facebook album, or Drive folder",
+        clip2Url: "https://example.com",
+
+        clip3Label: "Aerial Photos Sample",
+        clip3Hint: "A small gallery or album",
+        clip3Url: "https://example.com"
+      };
+    </script>
+
     <div class="top">
       <div class="brand">
-        <div class="logo">RP</div>
+        <div class="logo" id="logoText">TDG</div>
         <div>
-          <h1>Ray Price</h1>
-          <p>Drone footage for car shows, events, and aerial shots</p>
+          <h1 id="brandName">The Drone Guy</h1>
+          <p id="brandTagline">Drone Solutions & Photography</p>
         </div>
       </div>
 
@@ -268,30 +414,55 @@
     <div class="hero">
       <div class="heroInner">
         <div class="headline">
-          <h2>Drone footage that <span>looks expensive</span> and shares like crazy</h2>
-          <p>
-            Car shows, festivals, promotions, aerial photos and video.
-            Quick turnaround. Social-ready edits.
-          </p>
+          <h2 id="headline"></h2>
+          <p id="subhead"></p>
         </div>
 
         <div class="ctaRow">
-          <!-- Replace the # links with Ray's real links -->
-          <a class="btn btnPrimary" href="#contact">Book Ray</a>
-          <a class="btn" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn" href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" rel="noopener">TikTok</a>
-          <a class="btn" href="https://facebook.com/YOUR_FACEBOOK" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn btnPrimary" href="#contact">Book Now</a>
+          <a class="btn" id="ig" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" id="tt" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn" id="fb" target="_blank" rel="noopener">Facebook</a>
         </div>
 
         <div class="grid">
           <div class="card">
             <p class="sectionTitle">What you get</p>
             <ul class="list">
+              <li><strong>Event coverage</strong><span>Flyovers, walkthroughs, crowd shots</span></li>
               <li><strong>Social highlights</strong><span>Reels + TikTok-ready clips</span></li>
-              <li><strong>Event coverage</strong><span>Walkthroughs, flyovers, crowd shots</span></li>
               <li><strong>Aerial photos</strong><span>High-res stills for promos</span></li>
-              <li><strong>Fast delivery</strong><span>Same-day highlights when possible</span></li>
+              <li><strong>Clean delivery</strong><span>Simple links, organized files</span></li>
             </ul>
+
+            <div class="clips">
+              <p class="sectionTitle">Featured</p>
+              <div class="clipGrid">
+                <div class="clip">
+                  <div>
+                    <div class="label" id="c1Label">Latest Reel</div>
+                    <div class="hint" id="c1Hint">Link a fresh Instagram Reel or TikTok</div>
+                  </div>
+                  <a id="c1Url" href="#" target="_blank" rel="noopener">Watch</a>
+                </div>
+
+                <div class="clip">
+                  <div>
+                    <div class="label" id="c2Label">Car Show Highlights</div>
+                    <div class="hint" id="c2Hint">YouTube, Facebook album, or Drive folder</div>
+                  </div>
+                  <a id="c2Url" href="#" target="_blank" rel="noopener">Open</a>
+                </div>
+
+                <div class="clip">
+                  <div>
+                    <div class="label" id="c3Label">Aerial Photos Sample</div>
+                    <div class="hint" id="c3Hint">A small gallery or album</div>
+                  </div>
+                  <a id="c3Url" href="#" target="_blank" rel="noopener">View</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -315,23 +486,61 @@
 
             <p class="sectionTitle" id="contact">Contact</p>
             <ul class="list">
-              <li><strong>Email</strong><span>YOUR_EMAIL</span></li>
-              <li><strong>Phone</strong><span>YOUR_PHONE</span></li>
+              <li><strong>Name</strong><span id="contactName">Raymond Price</span></li>
+              <li><strong>Phone</strong><span id="contactPhone">910-939-8560</span></li>
+              <li><strong>Email</strong><span id="contactEmail">thedroneguyfive@gmail.com</span></li>
             </ul>
 
             <div style="height:10px"></div>
-            <a class="btn btnPrimary" href="mailto:YOUR_EMAIL?subject=Drone%20Booking%20Request">Email Ray</a>
+
+            <div class="ctaRow">
+              <a class="btn btnPrimary" id="emailLink" href="#">Email</a>
+              <a class="btn" id="callLink" href="#">Call</a>
+            </div>
           </div>
         </div>
 
         <div class="footer">
-          © <span id="year"></span> Ray Price. Built for car shows, events, and scroll-stopping footage.
+          © <span id="year"></span> <span id="footerBrand"></span>. Drone Solutions & Photography.
         </div>
       </div>
     </div>
   </div>
 
   <script>
+    // Apply config
+    document.getElementById("brandName").textContent = CONFIG.brand;
+    document.getElementById("brandTagline").textContent = CONFIG.tagline;
+    document.getElementById("logoText").textContent = CONFIG.logoText;
+
+    document.getElementById("headline").innerHTML = CONFIG.headline;
+    document.getElementById("subhead").textContent = CONFIG.subhead;
+
+    document.getElementById("contactName").textContent = CONFIG.name;
+    document.getElementById("contactPhone").textContent = CONFIG.phone;
+    document.getElementById("contactEmail").textContent = CONFIG.email;
+
+    document.getElementById("ig").href = CONFIG.instagram;
+    document.getElementById("tt").href = CONFIG.tiktok;
+    document.getElementById("fb").href = CONFIG.facebook;
+
+    document.getElementById("c1Label").textContent = CONFIG.clip1Label;
+    document.getElementById("c1Hint").textContent = CONFIG.clip1Hint;
+    document.getElementById("c1Url").href = CONFIG.clip1Url;
+
+    document.getElementById("c2Label").textContent = CONFIG.clip2Label;
+    document.getElementById("c2Hint").textContent = CONFIG.clip2Hint;
+    document.getElementById("c2Url").href = CONFIG.clip2Url;
+
+    document.getElementById("c3Label").textContent = CONFIG.clip3Label;
+    document.getElementById("c3Hint").textContent = CONFIG.clip3Hint;
+    document.getElementById("c3Url").href = CONFIG.clip3Url;
+
+    const subject = encodeURIComponent(CONFIG.bookingSubject);
+    document.getElementById("emailLink").href = `mailto:${CONFIG.email}?subject=${subject}`;
+    document.getElementById("callLink").href = `tel:${CONFIG.phone.replace(/[^0-9+]/g,'')}`;
+
+    document.getElementById("footerBrand").textContent = CONFIG.brand;
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
