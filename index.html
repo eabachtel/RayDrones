@@ -1,588 +1,80 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Drone Guy | Drone Solutions & Photography</title>
-  <meta name="description" content="Professional drone coverage with clean delivery and fast turnaround. Book The Drone Guy." />
+<div class="grid">
 
-  <meta property="og:title" content="The Drone Guy | Drone Solutions & Photography" />
-  <meta property="og:description" content="Professional drone coverage with clean delivery and fast turnaround." />
-  <meta property="og:type" content="website" />
+<!-- SOCIAL BUTTONS -->
+<div class="card actions">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<a class="btn btnPrimary" href="#contact">Book Now</a>
 
-  <style>
-    :root{
-      /* Business card palette */
-      --bg: #1C1E25;
-      --bg2:#14161c;
+<a class="btn" href="https://instagram.com/the.drone.guy.five" target="_blank">
+Instagram
+</a>
 
-      --card: rgba(255,255,255,0.05);
-      --stroke: rgba(255,255,255,0.14);
+<a class="btn" href="https://tiktok.com/@the.drone.guy.4" target="_blank">
+TikTok
+</a>
 
-      --text: #D9D9D9;
-      --muted:#9FA3AA;
+</div>
 
-      --accent:#B4D455;
-      --accent2:#8FAE3C;
 
-      --shadow: 0 18px 60px rgba(0,0,0,0.55);
-      --radius: 22px;
-      --pad: 22px;
-      --max: 980px;
-    }
+<!-- MAIN REEL -->
+<div class="card reel">
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text);
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      padding: 28px 14px 56px;
-      background:
-        radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
-        radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-    }
+<div class="featured" id="featured">
+<div class="featuredOverlay">
+<div class="featuredLabel">Drone Reel</div>
+</div>
+</div>
 
-    .wrap{width:100%; max-width: var(--max);}
+</div>
 
-    .top{
-      display:flex;
-      gap: 18px;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom: 18px;
-    }
 
-    .brand{
-      display:flex;
-      gap: 14px;
-      align-items:center;
-    }
+<!-- SIDE PANEL -->
+<div class="card sidePanel">
 
-    .logo{
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      background: rgba(180,212,85,0.10);
-      border: 1px solid rgba(180,212,85,0.35);
-      box-shadow: 0 10px 30px rgba(180,212,85,0.12);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-    .logo img{
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      display:block;
-      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
-    }
+<div class="stats">
 
-    .brand h1{
-      font-size: 18px;
-      line-height: 1.2;
-      margin: 0;
-      letter-spacing: 0.2px;
-    }
-    .brand p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
+<div class="statBox">
+<div class="big">4K+</div>
+<div class="small">Capture</div>
+</div>
 
-    .pill{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.04);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 13px;
-      color: var(--muted);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      white-space:nowrap;
-      backdrop-filter: blur(10px);
-    }
-    .dot{
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(180,212,85,0.10);
-    }
+<div class="statBox">
+<div class="big">Fast</div>
+<div class="small">Delivery</div>
+</div>
 
-    .hero{
-      border: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
+<div class="statBox">
+<div class="big">Clean</div>
+<div class="small">Edits</div>
+</div>
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(1200px 520px at 40% 10%, rgba(255,255,255,0.06), transparent 60%),
-        radial-gradient(900px 420px at 18% 0%, rgba(180,212,85,0.10), transparent 62%),
-        radial-gradient(900px 420px at 95% 25%, rgba(180,212,85,0.06), transparent 70%);
-      opacity:0.85;
-      pointer-events:none;
-    }
+</div>
 
-    .heroInner{
-      position:relative;
-      padding: 28px;
-      display:grid;
-      gap: 18px;
-    }
 
-    .headline{
-      display:grid;
-      gap: 10px;
-    }
-    .headline h2{
-      margin:0;
-      font-size: clamp(26px, 4.0vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-    .accent{
-      color: var(--accent);
-      text-shadow: 0 0 22px rgba(180,212,85,0.14);
-    }
-    .headline p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-      max-width: 70ch;
-    }
+<div class="contact" id="contact">
 
-    .ctaRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-      align-items:center;
-    }
+<p><strong>Raymond Price</strong></p>
 
-    .btn{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      border-radius: 16px;
-      padding: 12px 14px;
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 14px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-      backdrop-filter: blur(10px);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(180,212,85,0.35);
-      background: rgba(255,255,255,0.08);
-    }
+<p>910-939-8560</p>
 
-    .btnPrimary{
-      border: 1px solid rgba(180,212,85,0.35);
-      background: linear-gradient(135deg, rgba(180,212,85,0.95), rgba(143,174,60,0.75));
-      color: #0f120d;
-      box-shadow: 0 14px 45px rgba(180,212,85,0.10);
-    }
-    .btnPrimary:hover{
-      transform: translateY(-1px) scale(1.01);
-    }
+<p>thedroneguyfive@gmail.com</p>
 
-    /* Best passthrough layout:
-       Left = featured reel loop (big and visual)
-       Right = quick stats + contact
-    */
-    .grid{
-      display:grid;
-      grid-template-columns: 1.45fr 0.55fr;
-      gap: 16px;
-      margin-top: 6px;
-    }
+<div class="ctaRow">
 
-    .card{
-      border: 1px solid var(--stroke);
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: var(--pad);
-      backdrop-filter: blur(10px);
-    }
+<a class="btn btnPrimary"
+href="mailto:thedroneguyfive@gmail.com">
+Email
+</a>
 
-    .sectionTitle{
-      margin: 0 0 10px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.82);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+<a class="btn"
+href="tel:9109398560">
+Call
+</a>
 
-    /* Featured loop */
-    .featured{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      overflow:hidden;
-      position:relative;
-      min-height: 360px;
-    }
-    .featuredMedia{
-      width:100%;
-      height:100%;
-      display:block;
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transition: opacity 500ms ease;
-    }
-    .featuredMedia.active{ opacity:1; }
-    .featured video,
-    .featured img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-    .featuredOverlay{
-      position:absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap: 10px;
-      pointer-events:none;
-    }
-    .featuredLabel{
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.92);
-      font-weight: 650;
-      font-size: 13px;
-      max-width: 72%;
-    }
-    .dots{
-      display:flex;
-      gap: 6px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-    }
-    .dotBtn{
-      width:8px; height:8px;
-      border-radius:999px;
-      background: rgba(255,255,255,0.35);
-    }
-    .dotBtn.active{
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(180,212,85,0.10);
-    }
+</div>
 
-    /* Right column */
-    .kpis{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .kpi{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      padding: 14px;
-    }
-    .kpi .big{
-      font-size: 18px;
-      font-weight: 800;
-      margin:0;
-      color: var(--text);
-    }
-    .kpi .small{
-      margin:4px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
+</div>
 
-    .list{
-      display:grid;
-      gap: 10px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-    .list li{
-      display:flex;
-      justify-content:space-between;
-      gap: 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 12px 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .list strong{ color: var(--text); font-weight: 700; }
+</div>
 
-    .footer{
-      margin-top: 16px;
-      text-align:center;
-      color: rgba(255,255,255,0.55);
-      font-size: 12px;
-    }
-
-    @media (max-width: 860px){
-      .grid{grid-template-columns: 1fr;}
-      .pill{display:none;}
-      .featured{min-height: 260px;}
-      .featuredLabel{max-width: 100%;}
-      .featuredOverlay{flex-direction:column; align-items:flex-start;}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-
-    <script>
-      /* EDIT THESE */
-      const CONFIG = {
-        brand: "The Drone Guy",
-        tagline: "Drone Solutions & Photography",
-
-        // Put your drone logo image in the repo:
-        // same folder as this HTML file
-        logoSrc: "drone-logo.png",
-        logoAlt: "The Drone Guy logo",
-
-        // Headline with green emphasis
-        headline:
-          '<span class="accent">Professional</span> drone coverage, <span class="accent">clean</span> delivery, and <span class="accent">fast</span> turnaround.',
-        subhead: "Car shows, events, and aerial photo/video. Simple links, organized files, ready to share.",
-
-        name: "Raymond Price",
-        phone: "910-939-8560",
-        email: "thedroneguyfive@gmail.com",
-
-        // Alphabetical order: Book Now, Facebook, Instagram, TikTok
-        facebook: "https://facebook.com/YOUR_FACEBOOK",
-        instagram: "https://instagram.com/YOUR_INSTAGRAM",
-        tiktok: "https://tiktok.com/@YOUR_TIKTOK",
-
-        bookingSubject: "Drone Booking Request",
-
-        // Featured media loop (mix images and MP4 videos)
-        featuredItems: [
-          { type: "image", src: "featured1.jpg", label: "Car show flyover" },
-          { type: "video", src: "featured2.mp4", label: "Event highlights" },
-          { type: "image", src: "featured3.jpg", label: "Aerial promo shot" }
-        ],
-        featuredRotateMs: 7000
-      };
-    </script>
-
-    <div class="top">
-      <div class="brand">
-        <div class="logo">
-          <img id="logoImg" src="" alt="" />
-        </div>
-        <div>
-          <h1 id="brandName"></h1>
-          <p id="brandTagline"></p>
-        </div>
-      </div>
-
-      <div class="pill">
-        <span class="dot"></span>
-        Booking open for events
-      </div>
-    </div>
-
-    <div class="hero">
-      <div class="heroInner">
-        <div class="headline">
-          <h2 id="headline"></h2>
-          <p id="subhead"></p>
-        </div>
-
-        <!-- Alphabetical order -->
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="#contact">Book Now</a>
-          <a class="btn" id="fb" target="_blank" rel="noopener">Facebook</a>
-          <a class="btn" id="ig" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn" id="tt" target="_blank" rel="noopener">TikTok</a>
-        </div>
-
-        <div class="grid">
-          <!-- Left: Featured reel loop -->
-          <div class="card">
-            <p class="sectionTitle">Reel</p>
-            <div class="featured" id="featured">
-              <div class="featuredOverlay">
-                <div class="featuredLabel" id="featuredLabel">Loading…</div>
-                <div class="dots" id="dots"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Quick stats + Contact -->
-          <div class="card">
-            <p class="sectionTitle">Quick stats</p>
-            <div class="kpis">
-              <div class="kpi">
-                <p class="big">4K+</p>
-                <p class="small">Capture quality</p>
-              </div>
-              <div class="kpi">
-                <p class="big">Fast</p>
-                <p class="small">Turnaround</p>
-              </div>
-              <div class="kpi">
-                <p class="big">Clean</p>
-                <p class="small">Delivery</p>
-              </div>
-            </div>
-
-            <p class="sectionTitle" id="contact">Contact</p>
-            <ul class="list">
-              <li><strong>Name</strong><span id="contactName"></span></li>
-              <li><strong>Phone</strong><span id="contactPhone"></span></li>
-              <li><strong>Email</strong><span id="contactEmail"></span></li>
-            </ul>
-
-            <div style="height:10px"></div>
-
-            <div class="ctaRow">
-              <a class="btn btnPrimary" id="emailLink" href="#">Email</a>
-              <a class="btn" id="callLink" href="#">Call</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer">
-          © <span id="year"></span> <span id="footerBrand"></span>. Drone Solutions & Photography.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Apply config
-    document.getElementById("brandName").textContent = CONFIG.brand;
-    document.getElementById("brandTagline").textContent = CONFIG.tagline;
-
-    const logoImg = document.getElementById("logoImg");
-    logoImg.src = CONFIG.logoSrc;
-    logoImg.alt = CONFIG.logoAlt;
-
-    document.getElementById("headline").innerHTML = CONFIG.headline;
-    document.getElementById("subhead").textContent = CONFIG.subhead;
-
-    document.getElementById("contactName").textContent = CONFIG.name;
-    document.getElementById("contactPhone").textContent = CONFIG.phone;
-    document.getElementById("contactEmail").textContent = CONFIG.email;
-
-    document.getElementById("fb").href = CONFIG.facebook;
-    document.getElementById("ig").href = CONFIG.instagram;
-    document.getElementById("tt").href = CONFIG.tiktok;
-
-    const subject = encodeURIComponent(CONFIG.bookingSubject);
-    document.getElementById("emailLink").href = `mailto:${CONFIG.email}?subject=${subject}`;
-    document.getElementById("callLink").href = `tel:${CONFIG.phone.replace(/[^0-9+]/g,'')}`;
-
-    document.getElementById("footerBrand").textContent = CONFIG.brand;
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Featured loop
-    const featuredEl = document.getElementById("featured");
-    const featuredLabelEl = document.getElementById("featuredLabel");
-    const dotsEl = document.getElementById("dots");
-
-    const items = Array.isArray(CONFIG.featuredItems) ? CONFIG.featuredItems : [];
-    const rotateMs = Number(CONFIG.featuredRotateMs || 7000);
-
-    const mediaNodes = [];
-    const dotNodes = [];
-
-    function makeMediaNode(item) {
-      const container = document.createElement("div");
-      container.className = "featuredMedia";
-
-      if (item.type === "video") {
-        const v = document.createElement("video");
-        v.src = item.src;
-        v.muted = true;
-        v.loop = true;
-        v.autoplay = true;
-        v.playsInline = true;
-        v.preload = "metadata";
-        container.appendChild(v);
-      } else {
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.alt = item.label || "Featured";
-        img.loading = "lazy";
-        container.appendChild(img);
-      }
-      return container;
-    }
-
-    function setActive(index) {
-      mediaNodes.forEach((n, i) => n.classList.toggle("active", i === index));
-      dotNodes.forEach((d, i) => d.classList.toggle("active", i === index));
-
-      const item = items[index];
-      featuredLabelEl.textContent = item?.label || "Reel";
-
-      const activeNode = mediaNodes[index];
-      const vid = activeNode?.querySelector("video");
-      if (vid) {
-        vid.currentTime = 0;
-        vid.play().catch(() => {});
-      }
-    }
-
-    if (items.length === 0) {
-      featuredLabelEl.textContent = "Add featuredItems in CONFIG";
-    } else {
-      items.forEach((item) => {
-        const media = makeMediaNode(item);
-        featuredEl.appendChild(media);
-        mediaNodes.push(media);
-
-        const dot = document.createElement("div");
-        dot.className = "dotBtn";
-        dotsEl.appendChild(dot);
-        dotNodes.push(dot);
-      });
-
-      let current = 0;
-      setActive(current);
-
-      setInterval(() => {
-        current = (current + 1) % items.length;
-        setActive(current);
-      }, rotateMs);
-    }
-  </script>
-</body>
-</html>
+</div>
