@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,12 +7,10 @@
   <title>The Drone Guy | Drone Solutions & Photography</title>
   <meta name="description" content="The Drone Guy — Drone Solutions & Photography. Car shows, events, aerial photos and video. Book now." />
 
-  <!-- Social share -->
   <meta property="og:title" content="The Drone Guy | Drone Solutions & Photography" />
   <meta property="og:description" content="Car shows, events, aerial photos and video. Book now." />
   <meta property="og:type" content="website" />
 
-  <!-- Font: clean, techy -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
@@ -19,16 +18,17 @@
   <style>
     :root{
       /* Business card palette */
-      --bg: #1C1E25;            /* deep charcoal */
-      --bg2:#14161c;            /* darker edge */
+      --bg: #1C1E25;
+      --bg2:#14161c;
+
       --card: rgba(255,255,255,0.05);
       --stroke: rgba(255,255,255,0.14);
 
-      --text: #D9D9D9;          /* light gray */
-      --muted:#9FA3AA;          /* softer gray */
+      --text: #D9D9D9;
+      --muted:#9FA3AA;
 
-      --accent:#B4D455;         /* neon drone green */
-      --accent2:#8FAE3C;        /* darker green for depth */
+      --accent:#B4D455;
+      --accent2:#8FAE3C;
 
       --shadow: 0 18px 60px rgba(0,0,0,0.55);
       --radius: 22px;
@@ -46,7 +46,7 @@
       justify-content:center;
       padding: 28px 14px 56px;
 
-      /* Subtle glow + dark background */
+      /* Clean background, no swish/line pattern */
       background:
         radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
         radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
@@ -55,7 +55,6 @@
 
     .wrap{width:100%; max-width: var(--max);}
 
-    /* Top bar */
     .top{
       display:flex;
       gap: 18px;
@@ -63,13 +62,14 @@
       justify-content:space-between;
       margin-bottom: 18px;
     }
+
     .brand{
       display:flex;
       gap: 14px;
       align-items:center;
     }
 
-    /* Brand mark that feels like the card */
+    /* Logo container now holds an image */
     .logo{
       width: 54px;
       height: 54px;
@@ -79,19 +79,14 @@
       box-shadow: 0 10px 30px rgba(180,212,85,0.12);
       display:grid;
       place-items:center;
-      font-weight:800;
-      letter-spacing:0.6px;
-      color: var(--accent);
-      position:relative;
       overflow:hidden;
     }
-    .logo::after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background: radial-gradient(circle at 30% 30%, rgba(180,212,85,0.28), transparent 45%);
-      transform: rotate(12deg);
-      pointer-events:none;
+    .logo img{
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      display:block;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
     }
 
     .brand h1{
@@ -125,7 +120,6 @@
       box-shadow: 0 0 0 6px rgba(180,212,85,0.10);
     }
 
-    /* Hero card */
     .hero{
       border: 1px solid var(--stroke);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
@@ -135,34 +129,16 @@
       position:relative;
     }
 
-    /* Curved line vibe like the business card */
+    /* Removed the repeating gray line pattern */
     .hero::before{
       content:"";
       position:absolute;
       inset:-2px;
       background:
         radial-gradient(1200px 520px at 40% 10%, rgba(255,255,255,0.06), transparent 60%),
-        repeating-linear-gradient(
-          105deg,
-          rgba(255,255,255,0.00) 0px,
-          rgba(255,255,255,0.00) 18px,
-          rgba(255,255,255,0.04) 19px,
-          rgba(255,255,255,0.00) 20px
-        );
-      opacity:0.55;
-      pointer-events:none;
-      filter: blur(0.2px);
-    }
-
-    /* Soft swooshes */
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-30%;
-      background:
-        radial-gradient(closest-side at 15% 40%, rgba(180,212,85,0.12), transparent 60%),
-        radial-gradient(closest-side at 80% 60%, rgba(180,212,85,0.07), transparent 60%);
-      transform: rotate(-8deg);
+        radial-gradient(900px 420px at 18% 0%, rgba(180,212,85,0.10), transparent 62%),
+        radial-gradient(900px 420px at 95% 25%, rgba(180,212,85,0.06), transparent 70%);
+      opacity:0.85;
       pointer-events:none;
     }
 
@@ -274,10 +250,7 @@
       font-size: 14px;
       color: var(--muted);
     }
-    .list strong{
-      color: var(--text);
-      font-weight: 700;
-    }
+    .list strong{ color: var(--text); font-weight: 700; }
 
     .kpis{
       display:grid;
@@ -290,57 +263,83 @@
       border-radius: 18px;
       padding: 14px;
     }
-    .kpi .big{
-      font-size: 20px;
-      font-weight: 800;
-      margin:0;
-      color: var(--text);
-    }
-    .kpi .small{
-      margin:4px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .kpi .big{ font-size: 20px; font-weight: 800; margin:0; }
+    .kpi .small{ margin:4px 0 0; color: var(--muted); font-size: 12px; }
 
-    /* Influencer friendly: clips section */
-    .clips{
+    /* Featured loop */
+    .featuredWrap{
       display:grid;
       gap: 10px;
       margin-top: 16px;
     }
-    .clipGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .clip{
+    .featured{
       border: 1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.04);
       border-radius: 18px;
-      padding: 14px;
-      min-height: 92px;
+      overflow:hidden;
+      position:relative;
+      min-height: 260px;
+    }
+    .featuredMedia{
+      width:100%;
+      height:100%;
+      display:block;
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition: opacity 500ms ease;
+    }
+    .featuredMedia.active{ opacity:1; }
+
+    .featured video,
+    .featured img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    .featuredOverlay{
+      position:absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
       display:flex;
-      flex-direction:column;
       justify-content:space-between;
+      align-items:flex-end;
+      gap: 10px;
+      pointer-events:none;
     }
-    .clip .label{
-      color: rgba(255,255,255,0.86);
+    .featuredLabel{
+      pointer-events:none;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.92);
       font-weight: 650;
       font-size: 13px;
+      max-width: 70%;
     }
-    .clip .hint{
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 6px;
+    .dots{
+      display:flex;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
     }
-    .clip a{
-      margin-top: 10px;
-      color: var(--accent);
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 13px;
+    .dotBtn{
+      width:8px; height:8px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.35);
     }
-    .clip a:hover{ text-decoration: underline; }
+    .dotBtn.active{
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(180,212,85,0.10);
+    }
 
     .footer{
       margin-top: 18px;
@@ -352,8 +351,10 @@
     @media (max-width: 860px){
       .grid{grid-template-columns: 1fr;}
       .kpis{grid-template-columns: 1fr;}
-      .clipGrid{grid-template-columns: 1fr;}
       .pill{display:none;}
+      .featured{min-height: 220px;}
+      .featuredLabel{max-width: 100%;}
+      .featuredOverlay{flex-direction:column; align-items:flex-start;}
     }
   </style>
 </head>
@@ -362,11 +363,14 @@
   <div class="wrap">
 
     <script>
-      /* EDIT ONLY THESE */
+      /* EDIT THESE */
       const CONFIG = {
         brand: "The Drone Guy",
         tagline: "Drone Solutions & Photography",
-        logoText: "TDG",
+
+        // Put your drone logo file in the repo, example: drone-logo.png
+        logoSrc: "drone-logo.png",
+        logoAlt: "The Drone Guy logo",
 
         headline: 'Drone solutions that <span class="accent">stand out</span> at car shows and events',
         subhead: "Car shows, festivals, promotions, aerial photos and video. Social-ready edits and clean delivery.",
@@ -375,33 +379,34 @@
         phone: "910-939-8560",
         email: "thedroneguyfive@gmail.com",
 
+        facebook: "https://facebook.com/YOUR_FACEBOOK",
         instagram: "https://instagram.com/YOUR_INSTAGRAM",
         tiktok: "https://tiktok.com/@YOUR_TIKTOK",
-        facebook: "https://facebook.com/YOUR_FACEBOOK",
 
         bookingSubject: "Drone Booking Request",
 
-        /* Optional: add 3 featured links (clips, reels, albums, etc.) */
-        clip1Label: "Latest Reel",
-        clip1Hint: "Link a fresh Instagram Reel or TikTok",
-        clip1Url: "https://example.com",
+        // Featured media loop (mix videos and images)
+        // For videos: use MP4 URLs you host (GitHub works, or YouTube is not direct MP4)
+        // For images: use JPG/PNG in your repo or direct URLs
+        featuredItems: [
+          { type: "image", src: "featured1.jpg", label: "Car show flyover" },
+          { type: "video", src: "featured2.mp4", label: "Event highlights" },
+          { type: "image", src: "featured3.jpg", label: "Aerial promo shot" }
+        ],
 
-        clip2Label: "Car Show Highlights",
-        clip2Hint: "YouTube, Facebook album, or Drive folder",
-        clip2Url: "https://example.com",
-
-        clip3Label: "Aerial Photos Sample",
-        clip3Hint: "A small gallery or album",
-        clip3Url: "https://example.com"
+        // How long each item shows (ms). Videos still loop while visible.
+        featuredRotateMs: 6000
       };
     </script>
 
     <div class="top">
       <div class="brand">
-        <div class="logo" id="logoText">TDG</div>
+        <div class="logo">
+          <img id="logoImg" src="" alt="" />
+        </div>
         <div>
-          <h1 id="brandName">The Drone Guy</h1>
-          <p id="brandTagline">Drone Solutions & Photography</p>
+          <h1 id="brandName"></h1>
+          <p id="brandTagline"></p>
         </div>
       </div>
 
@@ -418,11 +423,12 @@
           <p id="subhead"></p>
         </div>
 
+        <!-- Alphabetical order: Book Now, Facebook, Instagram, TikTok -->
         <div class="ctaRow">
           <a class="btn btnPrimary" href="#contact">Book Now</a>
+          <a class="btn" id="fb" target="_blank" rel="noopener">Facebook</a>
           <a class="btn" id="ig" target="_blank" rel="noopener">Instagram</a>
           <a class="btn" id="tt" target="_blank" rel="noopener">TikTok</a>
-          <a class="btn" id="fb" target="_blank" rel="noopener">Facebook</a>
         </div>
 
         <div class="grid">
@@ -430,37 +436,24 @@
             <p class="sectionTitle">What you get</p>
             <ul class="list">
               <li><strong>Event coverage</strong><span>Flyovers, walkthroughs, crowd shots</span></li>
-              <li><strong>Social highlights</strong><span>Reels + TikTok-ready clips</span></li>
+              <li><strong>Social highlights</strong><span>Short clips ready to post</span></li>
               <li><strong>Aerial photos</strong><span>High-res stills for promos</span></li>
               <li><strong>Clean delivery</strong><span>Simple links, organized files</span></li>
             </ul>
 
-            <div class="clips">
+            <div class="featuredWrap">
               <p class="sectionTitle">Featured</p>
-              <div class="clipGrid">
-                <div class="clip">
-                  <div>
-                    <div class="label" id="c1Label">Latest Reel</div>
-                    <div class="hint" id="c1Hint">Link a fresh Instagram Reel or TikTok</div>
-                  </div>
-                  <a id="c1Url" href="#" target="_blank" rel="noopener">Watch</a>
-                </div>
 
-                <div class="clip">
-                  <div>
-                    <div class="label" id="c2Label">Car Show Highlights</div>
-                    <div class="hint" id="c2Hint">YouTube, Facebook album, or Drive folder</div>
-                  </div>
-                  <a id="c2Url" href="#" target="_blank" rel="noopener">Open</a>
+              <div class="featured" id="featured">
+                <!-- Media injected by JS -->
+                <div class="featuredOverlay">
+                  <div class="featuredLabel" id="featuredLabel">Loading…</div>
+                  <div class="dots" id="dots"></div>
                 </div>
+              </div>
 
-                <div class="clip">
-                  <div>
-                    <div class="label" id="c3Label">Aerial Photos Sample</div>
-                    <div class="hint" id="c3Hint">A small gallery or album</div>
-                  </div>
-                  <a id="c3Url" href="#" target="_blank" rel="noopener">View</a>
-                </div>
+              <div style="color: var(--muted); font-size:12px;">
+                Tip: put 2–5 items in the loop. Images can be in your repo. Videos should be MP4.
               </div>
             </div>
           </div>
@@ -468,27 +461,18 @@
           <div class="card">
             <p class="sectionTitle">Quick stats</p>
             <div class="kpis">
-              <div class="kpi">
-                <p class="big">4K+</p>
-                <p class="small">Capture quality</p>
-              </div>
-              <div class="kpi">
-                <p class="big">Fast</p>
-                <p class="small">Turnaround</p>
-              </div>
-              <div class="kpi">
-                <p class="big">Clean</p>
-                <p class="small">Edits that pop</p>
-              </div>
+              <div class="kpi"><p class="big">4K+</p><p class="small">Capture quality</p></div>
+              <div class="kpi"><p class="big">Fast</p><p class="small">Turnaround</p></div>
+              <div class="kpi"><p class="big">Clean</p><p class="small">Edits that pop</p></div>
             </div>
 
             <div style="height:12px"></div>
 
             <p class="sectionTitle" id="contact">Contact</p>
             <ul class="list">
-              <li><strong>Name</strong><span id="contactName">Raymond Price</span></li>
-              <li><strong>Phone</strong><span id="contactPhone">910-939-8560</span></li>
-              <li><strong>Email</strong><span id="contactEmail">thedroneguyfive@gmail.com</span></li>
+              <li><strong>Name</strong><span id="contactName"></span></li>
+              <li><strong>Phone</strong><span id="contactPhone"></span></li>
+              <li><strong>Email</strong><span id="contactEmail"></span></li>
             </ul>
 
             <div style="height:10px"></div>
@@ -508,10 +492,13 @@
   </div>
 
   <script>
-    // Apply config
+    // Apply config text/links
     document.getElementById("brandName").textContent = CONFIG.brand;
     document.getElementById("brandTagline").textContent = CONFIG.tagline;
-    document.getElementById("logoText").textContent = CONFIG.logoText;
+
+    const logoImg = document.getElementById("logoImg");
+    logoImg.src = CONFIG.logoSrc;
+    logoImg.alt = CONFIG.logoAlt;
 
     document.getElementById("headline").innerHTML = CONFIG.headline;
     document.getElementById("subhead").textContent = CONFIG.subhead;
@@ -520,21 +507,9 @@
     document.getElementById("contactPhone").textContent = CONFIG.phone;
     document.getElementById("contactEmail").textContent = CONFIG.email;
 
+    document.getElementById("fb").href = CONFIG.facebook;
     document.getElementById("ig").href = CONFIG.instagram;
     document.getElementById("tt").href = CONFIG.tiktok;
-    document.getElementById("fb").href = CONFIG.facebook;
-
-    document.getElementById("c1Label").textContent = CONFIG.clip1Label;
-    document.getElementById("c1Hint").textContent = CONFIG.clip1Hint;
-    document.getElementById("c1Url").href = CONFIG.clip1Url;
-
-    document.getElementById("c2Label").textContent = CONFIG.clip2Label;
-    document.getElementById("c2Hint").textContent = CONFIG.clip2Hint;
-    document.getElementById("c2Url").href = CONFIG.clip2Url;
-
-    document.getElementById("c3Label").textContent = CONFIG.clip3Label;
-    document.getElementById("c3Hint").textContent = CONFIG.clip3Hint;
-    document.getElementById("c3Url").href = CONFIG.clip3Url;
 
     const subject = encodeURIComponent(CONFIG.bookingSubject);
     document.getElementById("emailLink").href = `mailto:${CONFIG.email}?subject=${subject}`;
@@ -542,6 +517,79 @@
 
     document.getElementById("footerBrand").textContent = CONFIG.brand;
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Featured loop
+    const featuredEl = document.getElementById("featured");
+    const featuredLabelEl = document.getElementById("featuredLabel");
+    const dotsEl = document.getElementById("dots");
+
+    const items = Array.isArray(CONFIG.featuredItems) ? CONFIG.featuredItems : [];
+    const rotateMs = Number(CONFIG.featuredRotateMs || 6000);
+
+    const mediaNodes = [];
+    const dotNodes = [];
+
+    function makeMediaNode(item) {
+      const container = document.createElement("div");
+      container.className = "featuredMedia";
+
+      if (item.type === "video") {
+        const v = document.createElement("video");
+        v.src = item.src;
+        v.muted = true;
+        v.loop = true;
+        v.autoplay = true;
+        v.playsInline = true;
+        v.preload = "metadata";
+        container.appendChild(v);
+      } else {
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.label || "Featured";
+        img.loading = "lazy";
+        container.appendChild(img);
+      }
+      return container;
+    }
+
+    function setActive(index) {
+      mediaNodes.forEach((n, i) => n.classList.toggle("active", i === index));
+      dotNodes.forEach((d, i) => d.classList.toggle("active", i === index));
+
+      const item = items[index];
+      featuredLabelEl.textContent = item?.label || "Featured";
+
+      // If switching to a video, try to play it (some browsers need a kick)
+      const activeNode = mediaNodes[index];
+      const vid = activeNode?.querySelector("video");
+      if (vid) {
+        vid.currentTime = 0;
+        vid.play().catch(() => {});
+      }
+    }
+
+    if (items.length === 0) {
+      featuredLabelEl.textContent = "Add featuredItems in CONFIG";
+    } else {
+      items.forEach((item, idx) => {
+        const media = makeMediaNode(item);
+        featuredEl.appendChild(media);
+        mediaNodes.push(media);
+
+        const dot = document.createElement("div");
+        dot.className = "dotBtn";
+        dotsEl.appendChild(dot);
+        dotNodes.push(dot);
+      });
+
+      let current = 0;
+      setActive(current);
+
+      setInterval(() => {
+        current = (current + 1) % items.length;
+        setActive(current);
+      }, rotateMs);
+    }
   </script>
 </body>
 </html>
