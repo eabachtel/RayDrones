@@ -1,13 +1,13 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Drone Guy | Drone Solutions & Photography</title>
-  <meta name="description" content="The Drone Guy — Drone Solutions & Photography. Book now." />
+  <meta name="description" content="Professional drone coverage with clean delivery and fast turnaround. Book The Drone Guy." />
 
   <meta property="og:title" content="The Drone Guy | Drone Solutions & Photography" />
-  <meta property="og:description" content="Book now." />
+  <meta property="og:description" content="Professional drone coverage with clean delivery and fast turnaround." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +44,6 @@
       display:flex;
       justify-content:center;
       padding: 28px 14px 56px;
-
-      /* Clean background, no swish/line pattern */
       background:
         radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
         radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
@@ -68,7 +66,6 @@
       align-items:center;
     }
 
-    /* Logo container now holds an image */
     .logo{
       width: 54px;
       height: 54px;
@@ -128,7 +125,6 @@
       position:relative;
     }
 
-    /* Removed the repeating gray line pattern */
     .hero::before{
       content:"";
       position:absolute;
@@ -145,29 +141,29 @@
       position:relative;
       padding: 28px;
       display:grid;
-      gap: 20px;
+      gap: 18px;
     }
 
     .headline{
       display:grid;
-      gap: 12px;
+      gap: 10px;
     }
     .headline h2{
       margin:0;
-      font-size: clamp(28px, 4.2vw, 44px);
-      line-height: 1.06;
+      font-size: clamp(26px, 4.0vw, 42px);
+      line-height: 1.08;
       letter-spacing: -0.02em;
     }
-    .headline h2 .accent{
+    .accent{
       color: var(--accent);
       text-shadow: 0 0 22px rgba(180,212,85,0.14);
     }
     .headline p{
       margin:0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.55;
-      max-width: 62ch;
+      max-width: 70ch;
     }
 
     .ctaRow{
@@ -208,11 +204,15 @@
       transform: translateY(-1px) scale(1.01);
     }
 
+    /* Best passthrough layout:
+       Left = featured reel loop (big and visual)
+       Right = quick stats + contact
+    */
     .grid{
       display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.45fr 0.55fr;
       gap: 16px;
-      margin-top: 16px;
+      margin-top: 6px;
     }
 
     .card{
@@ -229,6 +229,98 @@
       color: rgba(255,255,255,0.82);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    /* Featured loop */
+    .featured{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      overflow:hidden;
+      position:relative;
+      min-height: 360px;
+    }
+    .featuredMedia{
+      width:100%;
+      height:100%;
+      display:block;
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition: opacity 500ms ease;
+    }
+    .featuredMedia.active{ opacity:1; }
+    .featured video,
+    .featured img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .featuredOverlay{
+      position:absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 10px;
+      pointer-events:none;
+    }
+    .featuredLabel{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.92);
+      font-weight: 650;
+      font-size: 13px;
+      max-width: 72%;
+    }
+    .dots{
+      display:flex;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+    }
+    .dotBtn{
+      width:8px; height:8px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.35);
+    }
+    .dotBtn.active{
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(180,212,85,0.10);
+    }
+
+    /* Right column */
+    .kpis{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .kpi{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .kpi .big{
+      font-size: 18px;
+      font-weight: 800;
+      margin:0;
+      color: var(--text);
+    }
+    .kpi .small{
+      margin:4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
     }
 
     .list{
@@ -251,97 +343,8 @@
     }
     .list strong{ color: var(--text); font-weight: 700; }
 
-    .kpis{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .kpi{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      padding: 14px;
-    }
-    .kpi .big{ font-size: 20px; font-weight: 800; margin:0; }
-    .kpi .small{ margin:4px 0 0; color: var(--muted); font-size: 12px; }
-
-    /* Featured loop */
-    .featuredWrap{
-      display:grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .featured{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      overflow:hidden;
-      position:relative;
-      min-height: 260px;
-    }
-    .featuredMedia{
-      width:100%;
-      height:100%;
-      display:block;
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transition: opacity 500ms ease;
-    }
-    .featuredMedia.active{ opacity:1; }
-
-    .featured video,
-    .featured img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-
-    .featuredOverlay{
-      position:absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap: 10px;
-      pointer-events:none;
-    }
-    .featuredLabel{
-      pointer-events:none;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.92);
-      font-weight: 650;
-      font-size: 13px;
-      max-width: 70%;
-    }
-    .dots{
-      display:flex;
-      gap: 6px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-    }
-    .dotBtn{
-      width:8px; height:8px;
-      border-radius:999px;
-      background: rgba(255,255,255,0.35);
-    }
-    .dotBtn.active{
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(180,212,85,0.10);
-    }
-
     .footer{
-      margin-top: 18px;
+      margin-top: 16px;
       text-align:center;
       color: rgba(255,255,255,0.55);
       font-size: 12px;
@@ -349,9 +352,8 @@
 
     @media (max-width: 860px){
       .grid{grid-template-columns: 1fr;}
-      .kpis{grid-template-columns: 1fr;}
       .pill{display:none;}
-      .featured{min-height: 220px;}
+      .featured{min-height: 260px;}
       .featuredLabel{max-width: 100%;}
       .featuredOverlay{flex-direction:column; align-items:flex-start;}
     }
@@ -367,34 +369,34 @@
         brand: "The Drone Guy",
         tagline: "Drone Solutions & Photography",
 
-        // Put your drone logo file in the repo, example: drone-logo.png
+        // Put your drone logo image in the repo:
+        // same folder as this HTML file
         logoSrc: "drone-logo.png",
         logoAlt: "The Drone Guy logo",
 
-        headline: '<span class="accent"> Professional </span> Drone Coverage. <span class="accent"> Clean </span> Delivery. <span class="accent"> Fast </span> Turnaround.,
-       
+        // Headline with green emphasis
+        headline:
+          '<span class="accent">Professional</span> drone coverage, <span class="accent">clean</span> delivery, and <span class="accent">fast</span> turnaround.',
+        subhead: "Car shows, events, and aerial photo/video. Simple links, organized files, ready to share.",
 
-        name: "Ray Price",
+        name: "Raymond Price",
         phone: "910-939-8560",
         email: "thedroneguyfive@gmail.com",
 
-       
-        instagram: "https://instagram.com/the.drone.guy.five",
-        tiktok: "https://tiktok.com/@the.drone.guy.5",
+        // Alphabetical order: Book Now, Facebook, Instagram, TikTok
+        facebook: "https://facebook.com/YOUR_FACEBOOK",
+        instagram: "https://instagram.com/YOUR_INSTAGRAM",
+        tiktok: "https://tiktok.com/@YOUR_TIKTOK",
 
         bookingSubject: "Drone Booking Request",
 
-        // Featured media loop (mix videos and images)
-        // For videos: use MP4 URLs you host (GitHub works, or YouTube is not direct MP4)
-        // For images: use JPG/PNG in your repo or direct URLs
+        // Featured media loop (mix images and MP4 videos)
         featuredItems: [
           { type: "image", src: "featured1.jpg", label: "Car show flyover" },
           { type: "video", src: "featured2.mp4", label: "Event highlights" },
           { type: "image", src: "featured3.jpg", label: "Aerial promo shot" }
         ],
-
-        // How long each item shows (ms). Videos still loop while visible.
-        featuredRotateMs: 6000
+        featuredRotateMs: 7000
       };
     </script>
 
@@ -422,7 +424,7 @@
           <p id="subhead"></p>
         </div>
 
-        <!-- Alphabetical order: Book Now, Facebook, Instagram, TikTok -->
+        <!-- Alphabetical order -->
         <div class="ctaRow">
           <a class="btn btnPrimary" href="#contact">Book Now</a>
           <a class="btn" id="fb" target="_blank" rel="noopener">Facebook</a>
@@ -431,41 +433,34 @@
         </div>
 
         <div class="grid">
+          <!-- Left: Featured reel loop -->
           <div class="card">
-            <p class="sectionTitle">What you get</p>
-            <ul class="list">
-              <li><strong>Event coverage</strong><span>Flyovers, walkthroughs, crowd shots</span></li>
-              <li><strong>Social highlights</strong><span>Short clips ready to post</span></li>
-              <li><strong>Aerial photos</strong><span>High-res stills for promos</span></li>
-              <li><strong>Clean delivery</strong><span>Simple links, organized files</span></li>
-            </ul>
-
-            <div class="featuredWrap">
-              <p class="sectionTitle">Featured</p>
-
-              <div class="featured" id="featured">
-                <!-- Media injected by JS -->
-                <div class="featuredOverlay">
-                  <div class="featuredLabel" id="featuredLabel">Loading…</div>
-                  <div class="dots" id="dots"></div>
-                </div>
-              </div>
-
-              <div style="color: var(--muted); font-size:12px;">
-                Tip: put 2–5 items in the loop. Images can be in your repo. Videos should be MP4.
+            <p class="sectionTitle">Reel</p>
+            <div class="featured" id="featured">
+              <div class="featuredOverlay">
+                <div class="featuredLabel" id="featuredLabel">Loading…</div>
+                <div class="dots" id="dots"></div>
               </div>
             </div>
           </div>
 
+          <!-- Right: Quick stats + Contact -->
           <div class="card">
             <p class="sectionTitle">Quick stats</p>
             <div class="kpis">
-              <div class="kpi"><p class="big">4K+</p><p class="small">Capture quality</p></div>
-              <div class="kpi"><p class="big">Fast</p><p class="small">Turnaround</p></div>
-              <div class="kpi"><p class="big">Clean</p><p class="small">Edits that pop</p></div>
+              <div class="kpi">
+                <p class="big">4K+</p>
+                <p class="small">Capture quality</p>
+              </div>
+              <div class="kpi">
+                <p class="big">Fast</p>
+                <p class="small">Turnaround</p>
+              </div>
+              <div class="kpi">
+                <p class="big">Clean</p>
+                <p class="small">Delivery</p>
+              </div>
             </div>
-
-            <div style="height:12px"></div>
 
             <p class="sectionTitle" id="contact">Contact</p>
             <ul class="list">
@@ -491,7 +486,7 @@
   </div>
 
   <script>
-    // Apply config text/links
+    // Apply config
     document.getElementById("brandName").textContent = CONFIG.brand;
     document.getElementById("brandTagline").textContent = CONFIG.tagline;
 
@@ -523,7 +518,7 @@
     const dotsEl = document.getElementById("dots");
 
     const items = Array.isArray(CONFIG.featuredItems) ? CONFIG.featuredItems : [];
-    const rotateMs = Number(CONFIG.featuredRotateMs || 6000);
+    const rotateMs = Number(CONFIG.featuredRotateMs || 7000);
 
     const mediaNodes = [];
     const dotNodes = [];
@@ -556,9 +551,8 @@
       dotNodes.forEach((d, i) => d.classList.toggle("active", i === index));
 
       const item = items[index];
-      featuredLabelEl.textContent = item?.label || "Featured";
+      featuredLabelEl.textContent = item?.label || "Reel";
 
-      // If switching to a video, try to play it (some browsers need a kick)
       const activeNode = mediaNodes[index];
       const vid = activeNode?.querySelector("video");
       if (vid) {
@@ -570,7 +564,7 @@
     if (items.length === 0) {
       featuredLabelEl.textContent = "Add featuredItems in CONFIG";
     } else {
-      items.forEach((item, idx) => {
+      items.forEach((item) => {
         const media = makeMediaNode(item);
         featuredEl.appendChild(media);
         mediaNodes.push(media);
