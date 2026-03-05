@@ -1,476 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Drone Guy | Drone Solutions & Photography</title>
-  <meta name="description" content="Professional drone coverage with clean delivery and fast turnaround." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta property="og:title" content="The Drone Guy | Drone Solutions & Photography" />
-  <meta property="og:description" content="Professional drone coverage with clean delivery and fast turnaround." />
-  <meta property="og:type" content="website" />
+<title>The Drone Guy</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <style>
-    :root{
-      /* Business card palette */
-      --bg: #1C1E25;
-      --bg2:#14161c;
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
-      --card: rgba(255,255,255,0.05);
-      --stroke: rgba(255,255,255,0.14);
+<style>
 
-      --text: #D9D9D9;
-      --muted:#9FA3AA;
+:root{
+--bg:#1C1E25;
+--bg2:#14161c;
+--card:rgba(255,255,255,0.05);
+--stroke:rgba(255,255,255,0.14);
+--text:#D9D9D9;
+--muted:#9FA3AA;
+--accent:#B4D455;
+--shadow:0 18px 60px rgba(0,0,0,0.55);
+}
 
-      --accent:#B4D455;
-      --accent2:#8FAE3C;
+*{box-sizing:border-box}
 
-      --shadow: 0 18px 60px rgba(0,0,0,0.55);
-      --radius: 24px;
-      --pad: 22px;
-      --max: 1020px;
-    }
+body{
+margin:0;
+font-family:Outfit,system-ui;
+color:var(--text);
+background:
+radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
+radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
+linear-gradient(180deg,var(--bg),var(--bg2));
+display:flex;
+justify-content:center;
+padding:20px;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text);
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      padding: 28px 14px 56px;
-      background:
-        radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
-        radial-gradient(900px 560px at 95% 25%, rgba(180,212,85,0.06), transparent 70%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-    }
+.wrap{
+width:100%;
+max-width:700px;
+}
 
-    .wrap{width:100%; max-width: var(--max);}
+.header{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:10px;
+}
 
-    /* Top header */
-    .top{
-      display:flex;
-      gap: 18px;
-      align-items:center;
-      justify-content:flex-start;
-      margin-bottom: 16px;
-    }
-    .brand{
-      display:flex;
-      gap: 14px;
-      align-items:center;
-    }
-    .logo{
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      background: rgba(180,212,85,0.10);
-      border: 1px solid rgba(180,212,85,0.35);
-      box-shadow: 0 10px 30px rgba(180,212,85,0.12);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .logo img{
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      display:block;
-      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
-    }
-    .brandTitle{
-      margin:0;
-      font-size: clamp(34px, 4.2vw, 54px);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
+.logo{
+width:48px;
+height:48px;
+border-radius:12px;
+background:rgba(180,212,85,0.15);
+border:1px solid rgba(180,212,85,0.35);
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-    /* Main card */
-    .shell{
-      border: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border-radius: 38px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-      padding: 26px;
-    }
-    .shell::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(1200px 520px at 40% 10%, rgba(255,255,255,0.06), transparent 60%),
-        radial-gradient(900px 420px at 18% 0%, rgba(180,212,85,0.10), transparent 62%),
-        radial-gradient(900px 420px at 95% 25%, rgba(180,212,85,0.06), transparent 70%);
-      opacity:0.85;
-      pointer-events:none;
-    }
+.logo img{
+width:36px;
+height:36px;
+}
 
-    .content{
-      position:relative;
-      display:grid;
-      gap: 14px;
-    }
+.title{
+font-size:32px;
+font-weight:800;
+}
 
-    .headline{
-      text-align:center;
-      margin: 6px 0 6px;
-      font-size: 14px;
-      color: var(--text);
-    }
+.headline{
+text-align:center;
+margin:10px 0 18px;
+font-size:14px;
+}
 
-    .accent{
-      color: var(--accent);
-      text-shadow: 0 0 18px rgba(180,212,85,0.14);
-      font-weight: 700;
-    }
+.accent{
+color:var(--accent);
+font-weight:700;
+}
 
-    /* Button row (as in your drawing) */
-    .actions{
-      display:flex;
-      gap: 14px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom: 4px;
-    }
+.reel{
+border-radius:20px;
+overflow:hidden;
+border:1px solid var(--stroke);
+background:var(--card);
+min-height:260px;
+margin-bottom:18px;
+position:relative;
+}
 
-    .btn{
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 10px 16px;
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 14px;
-      display:inline-flex;
-      align-items:center;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-      backdrop-filter: blur(10px);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(180,212,85,0.35);
-      background: rgba(255,255,255,0.08);
-    }
-    .btnPrimary{
-      border: 1px solid rgba(180,212,85,0.35);
-      background: linear-gradient(135deg, rgba(180,212,85,0.95), rgba(143,174,60,0.75));
-      color: #0f120d;
-      box-shadow: 0 14px 45px rgba(180,212,85,0.10);
-    }
+.reel video,
+.reel img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
 
-    /* Layout like your mock: large reel left, side card right */
-    .grid{
-      display:grid;
-      grid-template-columns: 1.55fr 0.65fr;
-      gap: 18px;
-      align-items:start;
-      margin-top: 6px;
-    }
+.buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
 
-    .card{
-      border: 1px solid var(--stroke);
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: var(--pad);
-      backdrop-filter: blur(10px);
-    }
+.btn{
+border:1px solid rgba(255,255,255,0.18);
+background:rgba(255,255,255,0.06);
+padding:12px 18px;
+border-radius:14px;
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:14px;
+}
 
-    /* Reel */
-    .featured{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 22px;
-      overflow:hidden;
-      position:relative;
-      min-height: 380px;
-    }
-    .featuredMedia{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transition: opacity 500ms ease;
-    }
-    .featuredMedia.active{opacity:1;}
-    .featured video,
-    .featured img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-    .featuredOverlay{
-      position:absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap: 10px;
-      pointer-events:none;
-    }
-    .featuredLabel{
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.92);
-      font-weight: 650;
-      font-size: 13px;
-      max-width: 72%;
-    }
-    .dots{
-      display:flex;
-      gap: 6px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-    }
-    .dotBtn{
-      width:8px; height:8px;
-      border-radius:999px;
-      background: rgba(255,255,255,0.35);
-    }
-    .dotBtn.active{
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(180,212,85,0.10);
-    }
+.btnPrimary{
+background:linear-gradient(135deg,#B4D455,#8FAE3C);
+color:black;
+border:none;
+}
 
-    /* Side panel: stats + contact */
-    .side{
-      display:grid;
-      gap: 16px;
-    }
+.contact{
+text-align:center;
+background:var(--card);
+border:1px solid var(--stroke);
+border-radius:20px;
+padding:18px;
+}
 
-    .stats{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .statBox{
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 12px;
-    }
-    .statBig{
-      font-size: 18px;
-      font-weight: 800;
-      margin:0;
-      line-height: 1.15;
-    }
-    .statSmall{
-      margin:4px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
+.contact p{
+margin:6px 0;
+}
 
-    .contact p{
-      margin: 0 0 8px;
-      color: var(--text);
-      font-size: 14px;
-    }
-    .contact p.muted{
-      color: var(--muted);
-    }
-    .contact .cta{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      margin-top: 10px;
-    }
+.contactButtons{
+margin-top:12px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
 
-    .footer{
-      margin-top: 14px;
-      text-align:center;
-      color: rgba(255,255,255,0.55);
-      font-size: 12px;
-      position:relative;
-    }
+.footer{
+margin-top:12px;
+text-align:center;
+font-size:12px;
+color:rgba(255,255,255,0.6);
+}
 
-    @media (max-width: 900px){
-      .brandTitle{font-size: 38px;}
-      .grid{grid-template-columns: 1fr;}
-      .featured{min-height: 260px;}
-      .shell{border-radius: 28px;}
-    }
-  </style>
+@media(min-width:800px){
+
+.wrap{
+max-width:1000px;
+}
+
+.layout{
+display:grid;
+grid-template-columns:1.5fr .7fr;
+gap:20px;
+align-items:start;
+}
+
+.reel{
+min-height:380px;
+margin-bottom:0;
+}
+
+.contact{
+text-align:left;
+}
+
+}
+
+</style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <!-- Top header: logo + big title -->
-    <div class="top">
-      <div class="brand">
-        <div class="logo">
-          <!-- Put drone-logo.png in the same folder as this HTML -->
-          <img src="drone-logo.png" alt="The Drone Guy logo" />
-        </div>
-        <h1 class="brandTitle">The Drone Guy</h1>
-      </div>
-    </div>
+<div class="wrap">
 
-    <div class="shell">
-      <div class="content">
+<div class="header">
 
-        <div class="headline">
-          <span class="accent">Professional</span> Drone Footage, <span class="accent">Clean</span> delivery, and <span class="accent">Fast</span> Turnaround.
-        </div>
+<div class="logo">
+<img src="drone-logo.png">
+</div>
 
-        <!-- Buttons (as drawn). Alphabetical: Book Now, Instagram, TikTok -->
-        <div class="actions">
-          <a class="btn btnPrimary" href="#contact">Book Now</a>
-          <a class="btn" href="https://instagram.com/the.drone.guy.five" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn" href="https://tiktok.com/@the.drone.guy.4" target="_blank" rel="noopener">TikTok</a>
-        </div>
+<div class="title">
+The Drone Guy
+</div>
 
-        <div class="grid">
-          <!-- Left: constant reel loop -->
-          <div class="card">
-            <div class="featured" id="featured">
-              <div class="featuredOverlay">
-                <div class="featuredLabel" id="featuredLabel">Reel</div>
-                <div class="dots" id="dots"></div>
-              </div>
-            </div>
-          </div>
+</div>
 
-          <!-- Right: stats + contact -->
-          <div class="card side">
-            <!-- Quick stats as boxes (no title text) -->
-            <div class="stats">
-              <div class="statBox">
-                <p class="statBig">4K+</p>
-                <p class="statSmall">Capture quality</p>
-              </div>
-              <div class="statBox">
-                <p class="statBig">Fast</p>
-                <p class="statSmall">Turnaround</p>
-              </div>
-              <div class="statBox">
-                <p class="statBig">Clean</p>
-                <p class="statSmall">Delivery</p>
-              </div>
-            </div>
+<div class="headline">
+<span class="accent">Professional</span> Drone Footage,
+<span class="accent">Clean</span> delivery, and
+<span class="accent">Fast</span> Turnaround.
+</div>
 
-            <div class="contact" id="contact">
-              <p><strong>Raymond Price</strong></p>
-              <p class="muted">910-939-8560</p>
-              <p class="muted">thedroneguyfive@gmail.com</p>
+<div class="layout">
 
-              <div class="cta">
-                <a class="btn btnPrimary" href="mailto:thedroneguyfive@gmail.com?subject=Drone%20Booking%20Request">Email</a>
-                <a class="btn" href="tel:9109398560">Call</a>
-              </div>
-            </div>
-          </div>
-        </div>
+<div>
 
-        <div class="footer">
-          © <span id="year"></span> The Drone Guy. Drone Solutions & Photography.
-        </div>
+<div class="reel" id="reel">
 
-      </div>
-    </div>
-  </div>
+<video autoplay muted loop playsinline>
+<source src="reel1.mp4" type="video/mp4">
+</video>
 
-  <script>
-    // Update year
-    document.getElementById("year").textContent = new Date().getFullYear();
+</div>
 
-    // Featured reel loop
-    // Put these files in the same folder as index.html (or change paths):
-    // - featured1.jpg
-    // - featured2.mp4
-    // - featured3.jpg
-    const featuredItems = [
-      { type: "image", src: "featured1.jpg", label: "Car show flyover" },
-      { type: "video", src: "featured2.mp4", label: "Event highlights" },
-      { type: "image", src: "featured3.jpg", label: "Aerial promo shot" }
-    ];
+<div class="buttons">
 
-    const rotateMs = 7000;
+<a class="btn btnPrimary" href="#contact">
+Book Now
+</a>
 
-    const featuredEl = document.getElementById("featured");
-    const featuredLabelEl = document.getElementById("featuredLabel");
-    const dotsEl = document.getElementById("dots");
+<a class="btn" href="https://instagram.com/the.drone.guy.five" target="_blank">
+Instagram
+</a>
 
-    const mediaNodes = [];
-    const dotNodes = [];
+<a class="btn" href="https://tiktok.com/@the.drone.guy.4" target="_blank">
+TikTok
+</a>
 
-    function makeMediaNode(item) {
-      const container = document.createElement("div");
-      container.className = "featuredMedia";
+</div>
 
-      if (item.type === "video") {
-        const v = document.createElement("video");
-        v.src = item.src;
-        v.muted = true;
-        v.loop = true;
-        v.autoplay = true;
-        v.playsInline = true;
-        v.preload = "metadata";
-        container.appendChild(v);
-      } else {
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.alt = item.label || "Reel";
-        img.loading = "lazy";
-        container.appendChild(img);
-      }
-      return container;
-    }
+</div>
 
-    function setActive(index) {
-      mediaNodes.forEach((n, i) => n.classList.toggle("active", i === index));
-      dotNodes.forEach((d, i) => d.classList.toggle("active", i === index));
+<div class="contact" id="contact">
 
-      const item = featuredItems[index];
-      featuredLabelEl.textContent = item?.label || "Reel";
+<p><strong>Raymond Price</strong></p>
 
-      const activeNode = mediaNodes[index];
-      const vid = activeNode?.querySelector("video");
-      if (vid) {
-        vid.currentTime = 0;
-        vid.play().catch(() => {});
-      }
-    }
+<p>910-939-8560</p>
 
-    if (featuredItems.length === 0) {
-      featuredLabelEl.textContent = "Add reel items";
-    } else {
-      featuredItems.forEach((item) => {
-        const media = makeMediaNode(item);
-        featuredEl.appendChild(media);
-        mediaNodes.push(media);
+<p>thedroneguyfive@gmail.com</p>
 
-        const dot = document.createElement("div");
-        dot.className = "dotBtn";
-        dotsEl.appendChild(dot);
-        dotNodes.push(dot);
-      });
+<div class="contactButtons">
 
-      let current = 0;
-      setActive(current);
+<a class="btn btnPrimary"
+href="mailto:thedroneguyfive@gmail.com?subject=Drone Booking Request">
+Email
+</a>
 
-      setInterval(() => {
-        current = (current + 1) % featuredItems.length;
-        setActive(current);
-      }, rotateMs);
-    }
-  </script>
+<a class="btn"
+href="tel:9109398560">
+Call
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 The Drone Guy
+</div>
+
+</div>
+
 </body>
 </html>
