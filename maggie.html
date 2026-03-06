@@ -23,36 +23,41 @@
     }
 
     /* Maggie wrapper */
-    .maggie-wrap{
-      position:relative;
-      width:140px;
-      height:140px;
-      margin:0 auto 20px auto;
-    }
+ .maggie-wrap{
+position:relative;
+width:200px;
+height:200px;
+margin:0 auto 20px auto;
+}
 
-    .maggie-body{
-      position:absolute;
-      left:0;
-      bottom:0;
-      width:100%;
-      z-index:2;
-      display:block;
-    }
+.maggie-body{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+z-index:2;
+display:block;
+}
 
-    .maggie-tail{
-      position:absolute;
-      right:6px;
-      top:42px;
-      width:48px;
-      z-index:1;
-      transform-origin:8% 75%;
-      animation:wag 0.55s infinite ease-in-out;
-    }
+.maggie-tail{
+position:absolute;
+right:18px;
+top:55px;
+width:80px;
+z-index:1;
+transform-origin:12% 78%;
+animation:wag 0.55s infinite ease-in-out;
+}
 
-    @keyframes wag{
-      0%{ transform:rotate(14deg); }
-      50%{ transform:rotate(-14deg); }
-      100%{ transform:rotate(14deg); }
+@keyframes wag{
+
+0%{ transform:rotate(16deg); }
+
+50%{ transform:rotate(-16deg); }
+
+100%{ transform:rotate(16deg); }
+
+}
     }
 
     h1{
