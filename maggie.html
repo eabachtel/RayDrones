@@ -1,143 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maggie | Meet Maggie</title>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    *{
+      box-sizing:border-box;
+    }
 
-<title>Maggie | Official Drone Doggie</title>
+    html, body{
+      margin:0;
+      padding:0;
+      font-family:Arial, sans-serif;
+      background:#111;
+      color:white;
+    }
 
-<style>
-.maggie-mascot{
-position:absolute;
-bottom:0;
-left:20px;
-width:140px;
-z-index:10;
-pointer-events:none;
-}
-body{
-margin:0;
-font-family:sans-serif;
-color:white;
-text-align:center;
-background:black;
-}
+    .hero{
+      position:relative;
+      min-height:100vh;
+      background-image:url("maggie.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
 
-.hero{
-height:100vh;
-background-image:url("maggie.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-}
-.maggie-mascot{
-animation:bounce 3s infinite ease-in-out;
-}
+    .overlay{
+      position:relative;
+      z-index:2;
+      background:rgba(0,0,0,0.55);
+      padding:32px 22px 150px;
+      border-radius:22px;
+      max-width:420px;
+      width:90%;
+      text-align:center;
+      box-shadow:0 12px 40px rgba(0,0,0,0.35);
+    }
 
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-6px);}
-}
+    h1{
+      margin:0 0 12px;
+      font-size:34px;
+      line-height:1.1;
+    }
 
-.overlay{
-background:rgba(0,0,0,.6);
-padding:40px 20px;
-border-radius:20px;
-max-width:400px;
-}
+    p{
+      margin:0;
+      font-size:16px;
+      line-height:1.55;
+      color:rgba(255,255,255,0.92);
+    }
 
-h1{
-margin-top:0;
-font-size:32px;
-}
+    .buttons{
+      margin-top:22px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
 
-p{
-font-size:16px;
-opacity:.9;
-}
+    .btn{
+      display:block;
+      padding:14px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:700;
+      transition:transform 0.18s ease, opacity 0.18s ease;
+    }
 
-.buttons{
-margin-top:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:0.96;
+    }
 
-button, a{
-padding:14px;
-border-radius:10px;
-border:none;
-font-size:16px;
-font-weight:bold;
-text-decoration:none;
-}
+    .primary{
+      background:#B4D455;
+      color:#111;
+    }
 
-.primary{
-background:#B4D455;
-color:black;
-}
+    .secondary{
+      background:white;
+      color:#111;
+    }
 
-.secondary{
-background:white;
-color:black;
-}
+    /* Maggie mascot area */
+    .maggie-wrap{
+      position:absolute;
+      bottom:18px;
+      left:50%;
+      transform:translateX(-50%);
+      width:170px;
+      height:170px;
+      z-index:3;
+      pointer-events:none;
+    }
 
-.gallery{
-padding:40px 20px;
-background:#111;
-}
+    .maggie-body{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      z-index:2;
+    }
 
-.gallery img{
-width:100%;
-border-radius:12px;
-margin-bottom:20px;
-}
+    .maggie-tail{
+      position:absolute;
+      right:-8px;
+      bottom:50px;
+      width:62px;
+      z-index:1;
+      transform-origin:12% 85%;
+      animation:wag 0.55s infinite ease-in-out;
+    }
 
-</style>
+    @keyframes wag{
+      0%{ transform:rotate(14deg); }
+      50%{ transform:rotate(-14deg); }
+      100%{ transform:rotate(14deg); }
+    }
 
+    .gallery{
+      padding:36px 18px 48px;
+      background:#111;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .gallery h2{
+      margin:0 0 18px;
+      text-align:center;
+      font-size:28px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns:1fr;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      display:block;
+      border-radius:18px;
+    }
+
+    @media (min-width:700px){
+      .gallery-grid{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width:768px){
+      .overlay{
+        padding:26px 18px 130px;
+        max-width:360px;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      p{
+        font-size:15px;
+      }
+
+      .maggie-wrap{
+        width:138px;
+        height:138px;
+        bottom:14px;
+      }
+
+      .maggie-tail{
+        width:50px;
+        right:-6px;
+        bottom:40px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="hero">
-    <img src="maggie-mascot.png"
-  class="maggie-mascot">
-<div class="overlay">
+  <div class="hero">
+    <div class="overlay">
+      <h1>🐾 Hi, I’m Maggie</h1>
 
-<h1>🐾 Hi I'm Maggie</h1>
+      <p>
+        I’m the cute one.<br>
+        Want to meet my pilot?
+      </p>
 
-<p>
-I'm the <b>Official Drone Doggie</b>.<br>
-I travel to car shows with <b>The Drone Guy</b>.
-</p>
+      <div class="buttons">
+        <a class="btn primary" href="index.html">🚁 Meet My Pilot</a>
+        <a class="btn secondary" href="#gallery">🐶 See More Maggie</a>
+      </div>
+    </div>
 
-<div class="buttons">
+    <!-- Maggie mascot replaces paw prints -->
+    <div class="maggie-wrap">
+      <img src="maggie-tail.png" class="maggie-tail" alt="">
+      <img src="maggie-body.png" class="maggie-body" alt="Maggie mascot">
+    </div>
+  </div>
 
-<a class="primary" href="/RayDrones">
-🚁 Meet My Pilot
-</a>
+  <div class="gallery" id="gallery">
+    <h2>Maggie’s Adventures</h2>
 
-<a class="secondary" href="#gallery">
-🐶 See Maggie's Adventures
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="gallery" id="gallery">
-
-<img src="maggie1.jpg">
-<img src="maggie2.jpg">
-<img src="maggie3.jpg">
-
-</div>
+    <div class="gallery-grid">
+      <img src="maggie1.jpg" alt="Maggie photo 1">
+      <img src="maggie2.jpg" alt="Maggie photo 2">
+      <img src="maggie3.jpg" alt="Maggie photo 3">
+    </div>
+  </div>
 
 </body>
 </html>
