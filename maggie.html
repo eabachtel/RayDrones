@@ -23,44 +23,47 @@
     }
 
     /* Maggie wrapper */
+    .maggie-wrap{
+      position:relative;
+      width:140px;
+      height:140px;
+      margin:0 auto 20px auto;
+    }
 
-.maggie-wrap{
-position:relative;
-width:300px;
-margin:0 auto 20px auto;
-}
+    .maggie-body{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      z-index:2;
+      display:block;
+    }
 
-.maggie-body{
-width:300px;
-position:relative;
-z-index:2;
-}
+    .maggie-tail{
+      position:absolute;
+      right:6px;
+      top:42px;
+      width:48px;
+      z-index:1;
+      transform-origin:8% 75%;
+      animation:wag 0.55s infinite ease-in-out;
+    }
 
-.maggie-tail{
-position:absolute;
-right:-8px;
-top:78px;
-width:70px;
-transform-origin:10% 75%;
-animation:wag .55s infinite ease-in-out;
-}
-
-@keyframes wag{
-0%{transform:rotate(-20deg);}
-50%{transform:rotate(20deg);}
-100%{transform:rotate(-20deg);}
-}
-    
+    @keyframes wag{
+      0%{ transform:rotate(14deg); }
+      50%{ transform:rotate(-14deg); }
+      100%{ transform:rotate(14deg); }
+    }
 
     h1{
       margin:0 0 10px 0;
-      font-size:26px;
+      font-size:30px;
     }
 
     .subtitle{
       opacity:.92;
       margin-bottom:28px;
-      font-size:16px;
+      font-size:26px;
     }
 
     .button{
@@ -90,12 +93,8 @@ animation:wag .55s infinite ease-in-out;
       margin:0 auto 40px auto;
     }
 
-    .gallery img{
-      width:100%;
-      border-radius:18px;
-      margin-top:14px;
-      display:block;
-    }
+
+  
   </style>
 </head>
 <body>
@@ -113,11 +112,10 @@ animation:wag .55s infinite ease-in-out;
       I'm the cute one!
     </p>
 
-    <a href="index.html" class="button primary">🚁Meet My Pilot</a>
-    <a href="https://instagram.com/maggie.sox" class="button secondary">🐶See More Maggie</a>
+    <a href="index.html" class="button primary">Meet My Pilot</a>
+    <a href="https://instagram.com/maggie.sox" class="button secondary">See More Maggie</a>
 
   </div>
-
 
 </body>
 </html>
