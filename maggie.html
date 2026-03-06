@@ -8,7 +8,14 @@
 <title>Maggie | Official Drone Guest</title>
 
 <style>
-
+.maggie-mascot{
+position:absolute;
+bottom:0;
+left:20px;
+width:140px;
+z-index:10;
+pointer-events:none;
+}
 body{
 margin:0;
 font-family:sans-serif;
@@ -19,12 +26,21 @@ background:black;
 
 .hero{
 height:100vh;
-background-image:url("maggie1.jpg");
+background-image:url("maggie.jpg");
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
+position:relative;
+}
+.maggie-mascot{
+animation:bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
 }
 
 .overlay{
@@ -88,7 +104,8 @@ margin-bottom:20px;
 <body>
 
 <div class="hero">
-
+    <img src="maggie-mascot.png"
+  class="maggie-mascot">
 <div class="overlay">
 
 <h1>🐾 Hi I'm Maggie</h1>
