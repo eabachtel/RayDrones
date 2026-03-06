@@ -1,143 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maggie</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#000;
+      color:white;
+      text-align:center;
+    }
 
-<title>Maggie</title>
+    .container{
+      max-width:420px;
+      margin:40px auto;
+      background:#111216;
+      padding:40px 20px 50px;
+      border-radius:35px;
+    }
 
-<style>
+    /* Maggie wrapper */
+    .maggie-wrap{
+      position:relative;
+      width:140px;
+      height:140px;
+      margin:0 auto 20px auto;
+    }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:black;
-color:white;
-text-align:center;
-}
+    .maggie-body{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      z-index:2;
+      display:block;
+    }
 
-/* main card */
+    .maggie-tail{
+      position:absolute;
+      right:6px;
+      top:42px;
+      width:48px;
+      z-index:1;
+      transform-origin:8% 75%;
+      animation:wag 0.55s infinite ease-in-out;
+    }
 
-.container{
-max-width:420px;
-margin:auto;
-margin-top:40px;
-background:rgba(255,255,255,0.08);
-padding:40px 20px 60px 20px;
-border-radius:35px;
-}
+    @keyframes wag{
+      0%{ transform:rotate(14deg); }
+      50%{ transform:rotate(-14deg); }
+      100%{ transform:rotate(14deg); }
+    }
 
-/* maggie image */
+    h1{
+      margin:0 0 10px 0;
+      font-size:26px;
+    }
 
-.maggie{
-width:120px;
-animation:wag 0.8s infinite ease-in-out;
-transform-origin:85% 75%;
-}
+    .subtitle{
+      opacity:.92;
+      margin-bottom:28px;
+      font-size:16px;
+    }
 
-/* wag animation */
+    .button{
+      display:block;
+      width:100%;
+      padding:18px;
+      margin-top:14px;
+      border-radius:18px;
+      font-size:18px;
+      text-decoration:none;
+      font-weight:bold;
+      box-sizing:border-box;
+    }
 
-@keyframes wag{
+    .primary{
+      background:#b4d455;
+      color:black;
+    }
 
-0%{
-transform:rotate(5deg);
-}
+    .secondary{
+      background:white;
+      color:black;
+    }
 
-50%{
-transform:rotate(-5deg);
-}
+    .gallery{
+      max-width:420px;
+      margin:0 auto 40px auto;
+    }
 
-100%{
-transform:rotate(5deg);
-}
-
-}
-
-/* text */
-
-h1{
-margin-top:10px;
-font-size:26px;
-}
-
-.subtitle{
-opacity:.9;
-margin-bottom:25px;
-}
-
-/* buttons */
-
-.button{
-display:block;
-width:100%;
-padding:18px;
-margin-top:12px;
-border-radius:18px;
-font-size:18px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.primary{
-background:#b5d655;
-color:black;
-}
-
-.secondary{
-background:white;
-color:black;
-}
-
-/* gallery */
-
-.gallery{
-margin-top:40px;
-}
-
-.gallery img{
-width:100%;
-border-radius:16px;
-margin-top:12px;
-}
-
-</style>
-
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      margin-top:14px;
+      display:block;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="container">
 
-<img src="maggie.png" class="maggie">
+    <div class="maggie-wrap">
+      <img src="maggie-tail.png" class="maggie-tail" alt="">
+      <img src="maggie-body.png" class="maggie-body" alt="Maggie">
+    </div>
 
-<h1>Hi, I'm Maggie</h1>
+    <h1>Hi, I'm Maggie</h1>
 
-<p class="subtitle">
-I'm the cute one!
-</p>
+    <p class="subtitle">
+      I'm the cute one!
+    </p>
 
-<a href="index.html" class="button primary">
-Meet My Pilot
-</a>
+    <a href="index.html" class="button primary">Meet My Pilot</a>
+    <a href="#gallery" class="button secondary">See More Maggie</a>
 
-<a href="#gallery" class="button secondary">
-See More Maggie
-</a>
+  </div>
 
-</div>
-
-
-<div id="gallery" class="gallery">
-
-<img src="maggie1.jpg">
-
-<img src="maggie2.jpg">
-
-<img src="maggie3.jpg">
-
-</div>
+  <div id="gallery" class="gallery">
+    <img src="maggie1.jpg" alt="Maggie photo 1">
+    <img src="maggie2.jpg" alt="Maggie photo 2">
+    <img src="maggie3.jpg" alt="Maggie photo 3">
+  </div>
 
 </body>
 </html>
