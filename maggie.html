@@ -31,31 +31,30 @@ max-width:420px;
 box-sizing:border-box;
 }
 
-/* Maggie container */
-
 .maggie-wrap{
 position:relative;
-width:260px;
-margin:0 auto 20px auto;
+width:270px;
+height:250px;
+margin:0 auto 10px auto;
 }
-
-/* Maggie body now flows naturally */
 
 .maggie-body{
-width:260px;
-display:block;
-margin:auto;
+position:absolute;
+left:50%;
+top:15px;
+transform:translateX(-50%);
+width:270px;
+z-index:2;
 }
-
-/* Tail animation */
 
 .maggie-tail{
 position:absolute;
-right:-10px;
-top:70px;
-width:60px;
-transform-origin:10% 80%;
-animation:wag .6s infinite ease-in-out;
+right:12px;
+top:82px;
+width:65px;
+z-index:1;
+transform-origin:12% 80%;
+animation:wag 0.6s infinite ease-in-out;
 }
 
 @keyframes wag{
@@ -106,9 +105,9 @@ color:black;
 
 <div class="maggie-wrap">
 
-<img src="maggie-body.png" class="maggie-body">
-
 <img src="maggie-tail.png" class="maggie-tail">
+
+<img src="maggie-body.png" class="maggie-body">
 
 </div>
 
