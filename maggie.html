@@ -20,39 +20,50 @@ align-items:center;
 min-height:100vh;
 text-align:center;
 padding:20px;
-}
-
-.card{
-background:#050b16;
-padding:40px 25px 35px;
-border-radius:40px;
-width:100%;
-max-width:420px;
 box-sizing:border-box;
 }
 
-/* Maggie container */
+/* Card / popup box */
+
+.card{
+background:#050b16;
+padding:35px 25px 35px;
+border-radius:40px;
+width:100%;
+max-width:420px;
+min-height:820px;
+box-sizing:border-box;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+}
+
+/* Maggie hero area */
 
 .maggie-wrap{
 position:relative;
-width:260px;
-margin:0 auto 20px auto;
+width:100%;
+height:360px;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+margin:0 auto 10px auto;
 }
 
-/* Maggie body now flows naturally */
+/* Maggie body */
 
 .maggie-body{
 width:260px;
 display:block;
-margin:auto;
 }
 
 /* Tail animation */
 
 .maggie-tail{
 position:absolute;
-right:-10px;
-top:70px;
+right:35px;
+top:105px;
 width:60px;
 transform-origin:10% 80%;
 animation:wag .6s infinite ease-in-out;
@@ -64,16 +75,20 @@ animation:wag .6s infinite ease-in-out;
 100%{transform:rotate(-18deg);}
 }
 
+/* Text */
+
 h1{
-margin:10px 0 6px;
+margin:0 0 6px;
 font-size:32px;
 }
 
 .subtitle{
-margin:0 0 25px;
+margin:0 0 28px;
 font-size:18px;
 color:#cccccc;
 }
+
+/* Buttons */
 
 .button{
 display:block;
@@ -84,6 +99,7 @@ font-size:18px;
 font-weight:bold;
 text-decoration:none;
 margin-bottom:16px;
+box-sizing:border-box;
 }
 
 .primary{
