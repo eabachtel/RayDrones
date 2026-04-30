@@ -57,9 +57,9 @@ margin:0 auto 10px auto;
 width:260px;
 display:block;
 transform:translateY(30px);
+position:relative;
+z-index:2;
 }
-
-/* Tail animation */
 
 .maggie-tail{
 position:absolute;
@@ -68,6 +68,7 @@ top:152px;
 width:80px;
 transform-origin:10% 80%;
 animation:wag .6s infinite ease-in-out;
+z-index:1;
 }
 
 @keyframes wag{
@@ -122,10 +123,8 @@ color:black;
 <div class="card">
 
 <div class="maggie-wrap">
-
-<img src="maggie-body.png" class="maggie-body">
-
 <img src="maggie-tail.png" class="maggie-tail">
+<img src="maggie-body.png" class="maggie-body">
 
 </div>
 
