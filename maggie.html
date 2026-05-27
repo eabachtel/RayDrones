@@ -53,8 +53,19 @@ margin:0 auto 10px auto;
 
 /* Maggie body */
 
+.maggie-wrap{
+position:relative;
+width:min(100%, 320px);
+height:360px;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+margin:0 auto 10px auto;
+}
+
 .maggie-body{
-width:260px;
+width:82%;
+max-width:260px;
 display:block;
 transform:translateY(30px);
 position:relative;
@@ -63,14 +74,15 @@ z-index:2;
 
 .maggie-tail{
 position:absolute;
-right:85px;
-top:150px;
-width:80px;
-transform-origin:10% 80%;
+width:25%;
+max-width:80px;
+right:18%;
+top:42%;
+transform-origin:15% 80%;
 animation:wag .6s infinite ease-in-out;
 z-index:1;
 }
-
+  
 @keyframes wag{
 0%{transform:rotate(-18deg);}
 50%{transform:rotate(18deg);}
@@ -120,11 +132,9 @@ color:black;
 
 <body>
 
-<div class="card">
-
 <div class="maggie-wrap">
-<img src="maggie-tail.png" class="maggie-tail">
-<img src="maggie-body.png" class="maggie-body">
+<img src="maggie-tail.png" class="maggie-tail" alt="Maggie's wagging tail">
+<img src="maggie-body.png" class="maggie-body" alt="Maggie the dog">
 
 </div>
 
