@@ -53,12 +53,24 @@ body{
 
 .maggie-tail{
   position:absolute;
-  width:70px;
-  max-width:25%;
-  left:58%;
-  top:49%;
-  transform-origin:15% 80%;
+  width:78px;
+  max-width:none;
+
+  left:54%;
+  top:50%;
+
+  transform-origin:left center;
+
+  transform:
+    scaleX(1.45)
+    rotate(12deg);
+
   animation:wag .6s infinite ease-in-out;
+
+  filter:drop-shadow(0 0 1px rgba(0,0,0,.4));
+
+  opacity:1;
+
   z-index:1;
 }
 
