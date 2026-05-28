@@ -52,12 +52,14 @@ body{
 }
 
 .maggie-tail{
-  .maggie-tail{
   position:absolute;
   width:70px;
+  max-width:25%;
   left:58%;
   top:49%;
-}
+  transform-origin:15% 80%;
+  animation:wag .6s infinite ease-in-out;
+  z-index:1;
 }
 
 @keyframes wag{
