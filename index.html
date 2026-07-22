@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>The Drone Guy</title>
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1"
+>
+
+<meta
+name="description"
+content="Professional drone footage by The Drone Guy. Serving Jacksonville and Eastern North Carolina."
+>
+
+<title>The Drone Guy | Professional Drone Footage</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
+/* =========================================
+   COLORS AND GENERAL SETTINGS
+========================================= */
+
 :root{
---bg:#1C1E25;
---bg2:#14161c;
---card:rgba(255,255,255,0.05);
---stroke:rgba(255,255,255,0.14);
---text:#D9D9D9;
---accent:#B4D455;
+--background:#080b0e;
+--background-soft:#11161b;
+--card:rgba(255,255,255,.045);
+--card-hover:rgba(180,212,85,.075);
+--border:rgba(255,255,255,.15);
+--border-green:rgba(180,212,85,.65);
+--text:#f5f5f3;
+--text-soft:rgba(255,255,255,.72);
+--green:#b4d455;
+--green-dark:#789c2c;
+--shadow:0 24px 60px rgba(0,0,0,.42);
 }
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
@@ -31,110 +65,160 @@ font-family:Outfit,system-ui,sans-serif;
 color:var(--text);
 
 background:
-radial-gradient(700px 500px at 5% 20%,
-rgba(180,212,85,0.12),
-transparent 65%),
+radial-gradient(
+700px 520px at 4% 18%,
+rgba(180,212,85,.13),
+transparent 68%
+),
+radial-gradient(
+650px 500px at 96% 82%,
+rgba(180,212,85,.07),
+transparent 68%
+),
+linear-gradient(
+180deg,
+#11161b,
+var(--background)
+);
 
-radial-gradient(650px 450px at 95% 75%,
-rgba(180,212,85,0.07),
-transparent 65%),
-
-linear-gradient(180deg,#11151a,#080b0e);
-
-display:flex;
-justify-content:center;
-padding:28px 20px 40px;
+padding:34px 20px 42px;
 }
+
+img,
+video{
+max-width:100%;
+}
+
+a{
+-webkit-tap-highlight-color:transparent;
+}
+
+/* =========================================
+   PAGE WRAPPER
+========================================= */
 
 .wrap{
 width:100%;
 max-width:1100px;
-margin:auto;
+margin:0 auto;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .header{
 display:flex;
 align-items:center;
 gap:22px;
-margin-bottom:8px;
+margin-bottom:12px;
 }
 
 .logo{
-
 width:68px;
 height:68px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
 
-background:rgba(255,255,255,.03);
-
-border:1px solid rgba(180,212,85,.65);
-
+background:rgba(255,255,255,.025);
+border:1px solid var(--border-green);
 border-radius:18px;
 
 box-shadow:
-0 10px 25px rgba(0,0,0,.35),
-0 0 18px rgba(180,212,85,.08);
+0 12px 30px rgba(0,0,0,.34),
+0 0 22px rgba(180,212,85,.08);
 
+transition:
+transform .25s ease,
+background .25s ease,
+box-shadow .25s ease;
 }
 
 .logo:hover{
-transform:rotate(5deg) scale(1.04);
+transform:rotate(4deg) scale(1.04);
+background:rgba(180,212,85,.06);
+box-shadow:
+0 14px 34px rgba(0,0,0,.4),
+0 0 26px rgba(180,212,85,.14);
 }
 
 .logo img{
-width:46px;
-height:46px;
+width:44px;
+height:44px;
 object-fit:contain;
+
+/*
+Turns the current black SVG logo white.
+This works best when the SVG is a solid black icon.
+*/
+filter:
+brightness(0)
+invert(1);
 }
 
 .title{
+margin:0;
 font-size:56px;
-line-height:1;
 font-weight:800;
+line-height:1;
 letter-spacing:-2px;
-color:#f4f4f2;
+color:#f7f7f5;
 }
 
-/* HEADLINE */
+/* =========================================
+   HEADLINE
+========================================= */
 
 .headline{
+max-width:900px;
+margin:20px auto 26px;
+padding:0 12px;
+
 text-align:center;
 font-size:21px;
 line-height:1.5;
-margin:20px 0 24px;
-color:rgba(255,255,255,.88);
+color:rgba(255,255,255,.9);
 }
 
 .accent{
-color:var(--accent);
+color:var(--green);
 font-weight:700;
 }
 
-/* ACTION BUTTONS */
+/* =========================================
+   GENERAL BUTTONS
+========================================= */
 
 .buttons{
 display:flex;
 justify-content:center;
 gap:14px;
 flex-wrap:wrap;
-margin-bottom:28px;
+margin-bottom:30px;
 }
 
 .btn{
+min-height:52px;
 display:inline-flex;
 align-items:center;
 justify-content:center;
-gap:8px;
-min-height:50px;
-border:1px solid rgba(255,255,255,0.18);
-background:rgba(255,255,255,0.04);
+gap:10px;
+
 padding:13px 28px;
-border-radius:14px;
-text-decoration:none;
-color:white;
-font-weight:600;
+
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.19);
+border-radius:15px;
+
+color:#fff;
+font-family:inherit;
 font-size:16px;
+font-weight:700;
+text-align:center;
+text-decoration:none;
+
 transition:
 transform .2s ease,
 background .2s ease,
@@ -144,50 +228,77 @@ box-shadow .2s ease;
 
 .btn:hover{
 transform:translateY(-2px);
-background:rgba(180,212,85,.10);
-border-color:rgba(180,212,85,.75);
-box-shadow:0 12px 25px rgba(0,0,0,.28);
+background:rgba(180,212,85,.09);
+border-color:var(--border-green);
+box-shadow:0 12px 26px rgba(0,0,0,.3);
+}
+
+.btn:focus-visible{
+outline:3px solid rgba(180,212,85,.4);
+outline-offset:3px;
 }
 
 .btnPrimary{
-background:linear-gradient(135deg,#a7ca42,#6f9228);
-color:white;
-border:1px solid rgba(180,212,85,.7);
+background:linear-gradient(
+135deg,
+#afd244,
+var(--green-dark)
+);
+
+border-color:rgba(180,212,85,.75);
+color:#fff;
 }
 
 .btnPrimary:hover{
-background:linear-gradient(135deg,#b4d455,#7ca22e);
+background:linear-gradient(
+135deg,
+#bddf55,
+#82a92f
+);
 }
 
-/* REEL */
+.socialIcon{
+font-size:20px;
+line-height:1;
+}
+
+/* =========================================
+   CAROUSEL
+========================================= */
 
 .carousel{
-border-radius:22px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.16);
-background:rgba(255,255,255,.035);
-margin-bottom:16px;
 position:relative;
-box-shadow:0 24px 60px rgba(0,0,0,.42);
+margin-bottom:18px;
+
+overflow:hidden;
+
+background:var(--card);
+border:1px solid var(--border);
+border-radius:23px;
+
+box-shadow:var(--shadow);
 }
 
 .carousel-track{
 display:flex;
-transition:transform .4s ease;
+transition:transform .45s ease;
 }
 
 .slide{
+position:relative;
 min-width:100%;
 height:480px;
 overflow:hidden;
+background:#151a1f;
 }
 
 .slide video,
 .slide img{
+display:block;
 width:100%;
 height:100%;
 object-fit:cover;
-display:block;
+
 transition:transform .5s ease;
 }
 
@@ -196,31 +307,127 @@ transition:transform .5s ease;
 transform:scale(1.015);
 }
 
+/* Placeholder shown when a media file is unavailable */
+
+.mediaPlaceholder{
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+padding:30px;
+text-align:center;
+color:var(--text-soft);
+
+background:
+linear-gradient(
+135deg,
+rgba(180,212,85,.07),
+rgba(255,255,255,.015)
+);
+}
+
+.mediaPlaceholder strong{
+font-size:20px;
+color:#fff;
+}
+
+.mediaPlaceholder span{
+font-size:14px;
+}
+
+/* Carousel arrows */
+
+.carouselArrow{
+position:absolute;
+top:50%;
+z-index:10;
+
+width:48px;
+height:48px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transform:translateY(-50%);
+
+background:rgba(8,11,14,.72);
+border:1px solid rgba(255,255,255,.25);
+border-radius:50%;
+
+color:#fff;
+font-size:28px;
+font-family:inherit;
+line-height:1;
+cursor:pointer;
+
+backdrop-filter:blur(10px);
+
+transition:
+background .2s ease,
+border-color .2s ease,
+transform .2s ease;
+}
+
+.carouselArrow:hover{
+background:rgba(180,212,85,.22);
+border-color:var(--border-green);
+}
+
+.carouselArrow:active{
+transform:translateY(-50%) scale(.94);
+}
+
+.carouselArrow.previous{
+left:18px;
+}
+
+.carouselArrow.next{
+right:18px;
+}
+
+/* Carousel dots */
+
 .dots{
+position:absolute;
+left:0;
+right:0;
+bottom:12px;
+z-index:10;
+
 display:flex;
 justify-content:center;
 gap:8px;
-padding:12px;
-position:absolute;
-bottom:4px;
-left:0;
-right:0;
-z-index:5;
 }
 
 .dot{
-width:9px;
-height:9px;
-border-radius:100px;
+width:10px;
+height:10px;
+padding:0;
+
 background:rgba(255,255,255,.5);
-box-shadow:0 1px 4px rgba(0,0,0,.4);
+border:0;
+border-radius:50%;
+
+box-shadow:0 2px 6px rgba(0,0,0,.5);
+cursor:pointer;
+
+transition:
+background .2s ease,
+transform .2s ease;
 }
 
 .dot.active{
-background:var(--accent);
+background:var(--green);
+transform:scale(1.15);
 }
 
-/* dots */
+/* =========================================
+   SERVICES
+========================================= */
 
 .services{
 display:grid;
@@ -230,17 +437,28 @@ margin:16px 0;
 }
 
 .serviceCard{
-min-height:170px;
+min-height:176px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
 padding:24px 18px;
-text-align:center;
-border-radius:18px;
-background:linear-gradient(
+
+background:
+linear-gradient(
 180deg,
 rgba(255,255,255,.055),
 rgba(255,255,255,.025)
 );
-border:1px solid rgba(255,255,255,.14);
+
+border:1px solid var(--border);
+border-radius:18px;
+
+text-align:center;
+
 box-shadow:0 16px 35px rgba(0,0,0,.22);
+
 transition:
 transform .2s ease,
 border-color .2s ease,
@@ -249,100 +467,99 @@ background .2s ease;
 
 .serviceCard:hover{
 transform:translateY(-3px);
-border-color:rgba(180,212,85,.6);
-background:rgba(180,212,85,.06);
+background:var(--card-hover);
+border-color:rgba(180,212,85,.55);
 }
 
 .serviceIcon{
-font-size:30px;
+width:42px;
+height:42px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin-bottom:12px;
+
+color:var(--green);
+font-size:28px;
 line-height:1;
-color:var(--accent);
-margin-bottom:14px;
 }
 
-.serviceCard h3{
-font-size:17px;
+.serviceCard h2{
 margin:0 0 10px;
+
+font-size:17px;
+font-weight:700;
 color:#fff;
 }
 
 .serviceCard p{
+margin:0;
+
 font-size:14px;
 line-height:1.5;
-margin:0;
-color:rgba(255,255,255,.72);
+color:var(--text-soft);
 }
-/* CONTACT */
-<section class="services">
 
-<div class="serviceCard">
-<div class="serviceIcon">▣</div>
-<h3>High Quality</h3>
-<p>Cinematic drone footage captured in stunning high resolution.</p>
-</div>
+/* =========================================
+   CONTACT CARD
+========================================= */
 
-<div class="serviceCard">
-<div class="serviceIcon">ϟ</div>
-<h3>Fast Turnaround</h3>
-<p>Quick delivery without compromising quality.</p>
-</div>
-
-<div class="serviceCard">
-<div class="serviceIcon">♢</div>
-<h3>Fully Licensed</h3>
-<p>FAA Part 107 certified and fully insured.</p>
-</div>
-
-<div class="serviceCard">
-<div class="serviceIcon">●</div>
-<h3>Local to You</h3>
-<p>Proudly serving Jacksonville and Eastern North Carolina.</p>
-</div>
-
-</section>
 .contact{
 display:grid;
-grid-template-columns:1.2fr 1fr;
+grid-template-columns:1.1fr 1.35fr;
 align-items:center;
-gap:28px;
-background:linear-gradient(
+gap:30px;
+
+margin-top:16px;
+padding:30px 32px;
+
+background:
+linear-gradient(
 135deg,
 rgba(255,255,255,.055),
 rgba(255,255,255,.025)
 );
-border:1px solid rgba(255,255,255,.16);
+
+border:1px solid var(--border);
 border-radius:20px;
-padding:28px 32px;
+
 box-shadow:0 20px 45px rgba(0,0,0,.28);
 }
 
 .contactInfo{
-text-align:left;
-padding-right:28px;
+padding-right:30px;
 border-right:1px solid rgba(255,255,255,.18);
 }
 
 .contactName{
-font-size:24px;
+margin:0 0 16px;
+
+font-size:25px;
 font-weight:800;
-color:white;
-margin:0 0 14px;
+color:#fff;
 }
 
 .contactLine{
 display:flex;
 align-items:flex-start;
 gap:12px;
-margin:10px 0;
+
+margin:11px 0;
+
+font-size:15px;
+line-height:1.5;
 color:rgba(255,255,255,.84);
 }
 
 .contactIcon{
 width:24px;
-color:var(--accent);
+flex-shrink:0;
+
+color:var(--green);
 font-weight:800;
 text-align:center;
-flex-shrink:0;
 }
 
 .contactLine a{
@@ -352,231 +569,72 @@ overflow-wrap:anywhere;
 }
 
 .contactLine a:hover{
-color:var(--accent);
+color:var(--green);
 }
 
 .contactButtons{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:1.15fr 1fr;
 gap:14px;
-margin:0;
 }
 
 .contactButtons .btn{
 width:100%;
-min-height:74px;
+min-height:84px;
 flex-direction:column;
-padding:12px;
+padding:14px;
 }
 
 .buttonTitle{
 display:block;
-font-size:18px;
+font-size:19px;
 font-weight:700;
+line-height:1.2;
 }
 
 .buttonSubtext{
 display:block;
-font-size:12px;
+font-size:13px;
 font-weight:400;
-opacity:.8;
+line-height:1.3;
+opacity:.82;
 }
 
+/* =========================================
+   FOOTER
+========================================= */
+
 .footer{
-margin-top:24px;
-padding-top:18px;
+margin-top:26px;
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.09);
+
 text-align:center;
 font-size:13px;
 color:rgba(255,255,255,.55);
-border-top:1px solid rgba(255,255,255,.08);
 }
 
-</style>
-</head>
-
-<body>
-
-<div class="wrap">
-
-<div class="header">
-
-<div class="logo">
-<img src="drone-logo.svg">
-</div>
-
-<div class="title">
-The Drone Guy
-</div>
-
-</div>
-
-<div class="headline">
-<span class="accent">Professional</span> Drone Footage,
-<span class="accent">Clean</span> Delivery,
-and <span class="accent">Fast</span> Turnaround.
-</div>
-
-<!-- BUTTONS ABOVE REEL -->
-
-<div class="buttons">
-
-<a class="btn"
-href="https://instagram.com/the.drone.guy.five"
-target="_blank"
-rel="noopener noreferrer">
-<span>◎</span>
-Instagram
-</a>
-
-<a class="btn"
-href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
-target="_blank"
-rel="noopener noreferrer">
-<span>♪</span>
-TikTok
-</a>
-
-</div>
-
-<!-- SWIPEABLE REEL -->
-
-<div class="carousel">
-
-<div class="carousel-track" id="track">
-
-<div class="slide">
-<video autoplay muted loop playsinline>
-<source src="reel1.mp4" type="video/mp4">
-</video>
-</div>
-
-<div class="slide">
-<img src="reel2.jpg">
-</div>
-
-<div class="slide">
-<video autoplay muted loop playsinline>
-<source src="reel3.mp4" type="video/mp4">
-</video>
-</div>
-
-</div>
-
-<div class="dots" id="dots"></div>
-
-</div>
-
-<!-- CONTACT -->
-
-<div class="contact" id="contact">
-
-<p><strong>Ray Price</strong></p>
-
-<p>910-939-8560</p>
-
-<p>thedroneguyfive@gmail.com</p>
-
-<div class="contact" id="contact">
-
-<div class="contactInfo">
-
-<p class="contactName">Ray Price</p>
-
-<div class="contactLine">
-<span class="contactIcon">●</span>
-<a href="tel:9109398560">910-939-8560</a>
-</div>
-
-<div class="contactLine">
-<span class="contactIcon">✉</span>
-<a href="mailto:thedroneguyfive@gmail.com">
-thedroneguyfive@gmail.com
-</a>
-</div>
-
-<div class="contactLine">
-<span class="contactIcon">⌖</span>
-<span>Jacksonville, North Carolina</span>
-</div>
-
-</div>
-
-<div class="contactButtons">
-
-<a class="btn btnPrimary"
-href="mailto:thedroneguyfive@gmail.com?subject=Drone Booking Request">
-
-<span class="buttonTitle">✉ Email Me</span>
-<span class="buttonSubtext">Send a Booking Request</span>
-
-</a>
-
-<a class="btn"
-href="tel:9109398560">
-
-<span class="buttonTitle">☎ Call Me</span>
-<span class="buttonSubtext">910-939-8560</span>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="footer">
-© 2026 The Drone Guy
-</div>
-
-</div>
-
-<script>
-
-/* Carousel */
-
-const track=document.getElementById("track")
-const slides=document.querySelectorAll(".slide")
-const dotsContainer=document.getElementById("dots")
-
-let index=0
-
-slides.forEach((_,i)=>{
-let d=document.createElement("div")
-d.className="dot"
-dotsContainer.appendChild(d)
-})
-
-const dots=document.querySelectorAll(".dot")
-
-function update(){
-track.style.transform=`translateX(-${index*100}%)`
-dots.forEach(d=>d.classList.remove("active"))
-dots[index].classList.add("active")
+.footerLinks{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-bottom:12px;
 }
 
-update()
+.footerLinks a{
+color:rgba(255,255,255,.75);
+font-size:15px;
+text-decoration:none;
+}
 
-/* swipe */
+.footerLinks a:hover{
+color:var(--green);
+}
 
-let startX=0
-
-track.addEventListener("touchstart",e=>{
-startX=e.touches[0].clientX
-})
-
-track.addEventListener("touchend",e=>{
-let diff=startX-e.changedTouches[0].clientX
-
-if(diff>50 && index<slides.length-1) index++
-if(diff<-50 && index>0) index--
-
-update()
-})
-
-</script>
-
-</body>
-</html>
-/* TABLETS */
+/* =========================================
+   TABLET LAYOUT
+========================================= */
 
 @media (max-width:900px){
 
@@ -603,18 +661,21 @@ grid-template-columns:1fr;
 .contactInfo{
 padding-right:0;
 padding-bottom:22px;
+
 border-right:0;
 border-bottom:1px solid rgba(255,255,255,.18);
 }
 
 }
 
-/* MOBILE PHONES */
+/* =========================================
+   MOBILE PHONE LAYOUT
+========================================= */
 
 @media (max-width:600px){
 
 body{
-padding:16px 12px 30px;
+padding:18px 12px 30px;
 }
 
 .header{
@@ -623,8 +684,8 @@ gap:12px;
 }
 
 .logo{
-width:50px;
-height:50px;
+width:52px;
+height:52px;
 border-radius:14px;
 }
 
@@ -639,18 +700,19 @@ letter-spacing:-1px;
 }
 
 .headline{
+max-width:355px;
+margin:17px auto 21px;
+padding:0 5px;
+
 font-size:15px;
 line-height:1.45;
-max-width:350px;
-margin:16px auto 20px;
-padding:0 8px;
 }
 
 .buttons{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
-margin-bottom:20px;
+margin-bottom:21px;
 }
 
 .buttons .btn{
@@ -661,15 +723,29 @@ font-size:14px;
 }
 
 .carousel{
-border-radius:16px;
+border-radius:17px;
 }
 
 .slide{
-height:230px;
+height:235px;
+}
+
+.carouselArrow{
+width:40px;
+height:40px;
+font-size:23px;
+}
+
+.carouselArrow.previous{
+left:10px;
+}
+
+.carouselArrow.next{
+right:10px;
 }
 
 .dots{
-padding:8px;
+bottom:9px;
 }
 
 .services{
@@ -679,17 +755,19 @@ margin:12px 0;
 }
 
 .serviceCard{
-min-height:150px;
+min-height:160px;
 padding:18px 12px;
 border-radius:15px;
 }
 
 .serviceIcon{
-font-size:25px;
-margin-bottom:10px;
+width:34px;
+height:34px;
+margin-bottom:9px;
+font-size:24px;
 }
 
-.serviceCard h3{
+.serviceCard h2{
 font-size:15px;
 }
 
@@ -698,8 +776,8 @@ font-size:12px;
 }
 
 .contact{
-padding:22px 16px;
 gap:20px;
+padding:22px 16px;
 border-radius:17px;
 }
 
@@ -716,17 +794,19 @@ grid-template-columns:1fr;
 }
 
 .contactButtons .btn{
-min-height:64px;
+min-height:68px;
 }
 
 .footer{
-margin-top:20px;
+margin-top:21px;
 font-size:12px;
 }
 
 }
 
-/* EXTRA-SMALL PHONES */
+/* =========================================
+   EXTRA-SMALL PHONES
+========================================= */
 
 @media (max-width:380px){
 
@@ -742,6 +822,10 @@ font-size:29px;
 font-size:14px;
 }
 
+.buttons{
+grid-template-columns:1fr;
+}
+
 .services{
 grid-template-columns:1fr;
 }
@@ -755,3 +839,556 @@ height:205px;
 }
 
 }
+
+</style>
+
+</head>
+
+<body>
+
+<main class="wrap">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="logo">
+<img
+src="drone-logo.svg"
+alt="The Drone Guy logo"
+>
+</div>
+
+<h1 class="title">The Drone Guy</h1>
+
+</header>
+
+<!-- HEADLINE -->
+
+<p class="headline">
+
+<span class="accent">Professional</span>
+Drone Footage,
+
+<span class="accent">Clean</span>
+Delivery, and
+
+<span class="accent">Fast</span>
+Turnaround.
+
+</p>
+
+<!-- SOCIAL BUTTONS -->
+
+<nav
+class="buttons"
+aria-label="Social media links"
+>
+
+<a
+class="btn"
+href="https://instagram.com/the.drone.guy.five"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Visit The Drone Guy on Instagram"
+>
+
+<span
+class="socialIcon"
+aria-hidden="true"
+>◎</span>
+
+Instagram
+
+</a>
+
+<a
+class="btn"
+href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Visit The Drone Guy on TikTok"
+>
+
+<span
+class="socialIcon"
+aria-hidden="true"
+>♪</span>
+
+TikTok
+
+</a>
+
+</nav>
+
+<!-- MEDIA CAROUSEL -->
+
+<section
+class="carousel"
+aria-label="Drone footage portfolio"
+>
+
+<div
+class="carousel-track"
+id="track"
+>
+
+<!-- SLIDE 1 -->
+
+<div class="slide">
+
+<video
+autoplay
+muted
+loop
+playsinline
+preload="metadata"
+poster="reel1-poster.jpg"
+>
+
+<source
+src="reel1.mp4"
+type="video/mp4"
+>
+
+Your browser does not support video playback.
+
+</video>
+
+</div>
+
+<!-- SLIDE 2 -->
+
+<div class="slide">
+
+<img
+src="reel2.jpg"
+alt="Aerial drone photograph by The Drone Guy"
+>
+
+</div>
+
+<!-- SLIDE 3 -->
+
+<div class="slide">
+
+<video
+autoplay
+muted
+loop
+playsinline
+preload="metadata"
+poster="reel3-poster.jpg"
+>
+
+<source
+src="reel3.mp4"
+type="video/mp4"
+>
+
+Your browser does not support video playback.
+
+</video>
+
+</div>
+
+</div>
+
+<button
+class="carouselArrow previous"
+id="previousButton"
+type="button"
+aria-label="Show previous portfolio item"
+>
+‹
+</button>
+
+<button
+class="carouselArrow next"
+id="nextButton"
+type="button"
+aria-label="Show next portfolio item"
+>
+›
+</button>
+
+<div
+class="dots"
+id="dots"
+aria-label="Portfolio slide controls"
+></div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section
+class="services"
+aria-label="Why choose The Drone Guy"
+>
+
+<article class="serviceCard">
+
+<div
+class="serviceIcon"
+aria-hidden="true"
+>▣</div>
+
+<h2>High Quality</h2>
+
+<p>
+Cinematic drone footage captured in stunning high resolution.
+</p>
+
+</article>
+
+<article class="serviceCard">
+
+<div
+class="serviceIcon"
+aria-hidden="true"
+>ϟ</div>
+
+<h2>Fast Turnaround</h2>
+
+<p>
+Quick delivery without compromising the quality of your footage.
+</p>
+
+</article>
+
+<article class="serviceCard">
+
+<div
+class="serviceIcon"
+aria-hidden="true"
+>◇</div>
+
+<h2>FAA Certified</h2>
+
+<p>
+Professional FAA Part 107 licensed drone pilot.
+</p>
+
+</article>
+
+<article class="serviceCard">
+
+<div
+class="serviceIcon"
+aria-hidden="true"
+>⌖</div>
+
+<h2>Local to You</h2>
+
+<p>
+Proudly serving Jacksonville and Eastern North Carolina.
+</p>
+
+</article>
+
+</section>
+
+<!-- CONTACT -->
+
+<section
+class="contact"
+id="contact"
+aria-label="Contact The Drone Guy"
+>
+
+<div class="contactInfo">
+
+<h2 class="contactName">
+Ray Price
+</h2>
+
+<div class="contactLine">
+
+<span
+class="contactIcon"
+aria-hidden="true"
+>☎</span>
+
+<a href="tel:9109398560">
+910-939-8560
+</a>
+
+</div>
+
+<div class="contactLine">
+
+<span
+class="contactIcon"
+aria-hidden="true"
+>✉</span>
+
+<a href="mailto:thedroneguyfive@gmail.com">
+thedroneguyfive@gmail.com
+</a>
+
+</div>
+
+<div class="contactLine">
+
+<span
+class="contactIcon"
+aria-hidden="true"
+>⌖</span>
+
+<span>
+Jacksonville, North Carolina
+</span>
+
+</div>
+
+</div>
+
+<div class="contactButtons">
+
+<a
+class="btn btnPrimary"
+href="mailto:thedroneguyfive@gmail.com?subject=Drone%20Booking%20Request"
+>
+
+<span class="buttonTitle">
+✉ Email Me
+</span>
+
+<span class="buttonSubtext">
+Send a booking request
+</span>
+
+</a>
+
+<a
+class="btn"
+href="tel:9109398560"
+>
+
+<span class="buttonTitle">
+☎ Call Me
+</span>
+
+<span class="buttonSubtext">
+910-939-8560
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footerLinks">
+
+<a
+href="https://instagram.com/the.drone.guy.five"
+target="_blank"
+rel="noopener noreferrer"
+>
+Instagram
+</a>
+
+<a
+href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
+target="_blank"
+rel="noopener noreferrer"
+>
+TikTok
+</a>
+
+<a href="mailto:thedroneguyfive@gmail.com">
+Email
+</a>
+
+</div>
+
+<div>
+© 2026 The Drone Guy. All rights reserved.
+</div>
+
+</footer>
+
+</main>
+
+<script>
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+const track =
+document.getElementById("track");
+
+const slides =
+Array.from(
+document.querySelectorAll(".slide")
+);
+
+const dotsContainer =
+document.getElementById("dots");
+
+const previousButton =
+document.getElementById("previousButton");
+
+const nextButton =
+document.getElementById("nextButton");
+
+let currentIndex = 0;
+let startX = 0;
+
+/* Create one navigation dot per slide */
+
+slides.forEach((slide, slideIndex) => {
+
+const dot =
+document.createElement("button");
+
+dot.className = "dot";
+dot.type = "button";
+
+dot.setAttribute(
+"aria-label",
+`Show portfolio item ${slideIndex + 1}`
+);
+
+dot.addEventListener("click", () => {
+
+currentIndex = slideIndex;
+updateCarousel();
+
+});
+
+dotsContainer.appendChild(dot);
+
+});
+
+const dots =
+Array.from(
+document.querySelectorAll(".dot")
+);
+
+/* Update slide position and active dot */
+
+function updateCarousel(){
+
+track.style.transform =
+`translateX(-${currentIndex * 100}%)`;
+
+dots.forEach((dot, dotIndex) => {
+
+dot.classList.toggle(
+"active",
+dotIndex === currentIndex
+);
+
+});
+
+}
+
+/* Previous slide */
+
+function showPreviousSlide(){
+
+currentIndex =
+currentIndex === 0
+? slides.length - 1
+: currentIndex - 1;
+
+updateCarousel();
+
+}
+
+/* Next slide */
+
+function showNextSlide(){
+
+currentIndex =
+currentIndex === slides.length - 1
+? 0
+: currentIndex + 1;
+
+updateCarousel();
+
+}
+
+previousButton.addEventListener(
+"click",
+showPreviousSlide
+);
+
+nextButton.addEventListener(
+"click",
+showNextSlide
+);
+
+/* Phone swipe controls */
+
+track.addEventListener(
+"touchstart",
+event => {
+
+startX =
+event.touches[0].clientX;
+
+},
+{
+passive:true
+}
+);
+
+track.addEventListener(
+"touchend",
+event => {
+
+const endX =
+event.changedTouches[0].clientX;
+
+const difference =
+startX - endX;
+
+if(difference > 50){
+showNextSlide();
+}
+
+if(difference < -50){
+showPreviousSlide();
+}
+
+},
+{
+passive:true
+}
+);
+
+/* Keyboard controls */
+
+document.addEventListener(
+"keydown",
+event => {
+
+if(event.key === "ArrowLeft"){
+showPreviousSlide();
+}
+
+if(event.key === "ArrowRight"){
+showNextSlide();
+}
+
+}
+);
+
+/* Start carousel */
+
+updateCarousel();
+
+</script>
+
+</body>
+
+</html>
