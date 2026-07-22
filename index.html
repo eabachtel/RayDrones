@@ -26,19 +26,30 @@
 
 body{
 margin:0;
-font-family:Outfit,system-ui;
+min-height:100vh;
+font-family:Outfit,system-ui,sans-serif;
 color:var(--text);
+
 background:
-radial-gradient(900px 560px at 18% 0%, rgba(180,212,85,0.12), transparent 62%),
-linear-gradient(180deg,var(--bg),var(--bg2));
+radial-gradient(700px 500px at 5% 20%,
+rgba(180,212,85,0.12),
+transparent 65%),
+
+radial-gradient(650px 450px at 95% 75%,
+rgba(180,212,85,0.07),
+transparent 65%),
+
+linear-gradient(180deg,#11151a,#080b0e);
+
 display:flex;
 justify-content:center;
-padding:20px;
+padding:28px 20px 40px;
 }
 
 .wrap{
 width:100%;
-max-width:700px;
+max-width:1100px;
+margin:auto;
 }
 
 /* HEADER */
@@ -46,36 +57,50 @@ max-width:700px;
 .header{
 display:flex;
 align-items:center;
-gap:14px;
-margin-bottom:6px;
+gap:22px;
+margin-bottom:8px;
 }
 
 .logo{
-width:46px;
-height:46px;
-border-radius:12px;
-background:rgba(180,212,85,0.15);
-border:1px solid rgba(180,212,85,0.35);
+width:68px;
+height:68px;
+border-radius:18px;
+background:rgba(180,212,85,0.08);
+border:1px solid rgba(180,212,85,0.65);
 display:flex;
 align-items:center;
 justify-content:center;
+flex-shrink:0;
+box-shadow:0 12px 30px rgba(0,0,0,.28);
+transition:transform .25s ease;
+}
+
+.logo:hover{
+transform:rotate(5deg) scale(1.04);
 }
 
 .logo img{
-width:34px;
+width:46px;
+height:46px;
+object-fit:contain;
 }
 
 .title{
-font-size:32px;
+font-size:56px;
+line-height:1;
 font-weight:800;
+letter-spacing:-2px;
+color:#f4f4f2;
 }
 
 /* HEADLINE */
 
 .headline{
 text-align:center;
-font-size:14px;
-margin:10px 0 18px;
+font-size:21px;
+line-height:1.5;
+margin:20px 0 24px;
+color:rgba(255,255,255,.88);
 }
 
 .accent{
@@ -88,37 +113,59 @@ font-weight:700;
 .buttons{
 display:flex;
 justify-content:center;
-gap:10px;
+gap:14px;
 flex-wrap:wrap;
-margin-bottom:18px;
+margin-bottom:28px;
 }
 
 .btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+min-height:50px;
 border:1px solid rgba(255,255,255,0.18);
-background:rgba(255,255,255,0.06);
-padding:12px 18px;
+background:rgba(255,255,255,0.04);
+padding:13px 28px;
 border-radius:14px;
 text-decoration:none;
 color:white;
 font-weight:600;
-font-size:14px;
+font-size:16px;
+transition:
+transform .2s ease,
+background .2s ease,
+border-color .2s ease,
+box-shadow .2s ease;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+background:rgba(180,212,85,.10);
+border-color:rgba(180,212,85,.75);
+box-shadow:0 12px 25px rgba(0,0,0,.28);
 }
 
 .btnPrimary{
-background:linear-gradient(135deg,#B4D455,#8FAE3C);
-color:black;
-border:none;
+background:linear-gradient(135deg,#a7ca42,#6f9228);
+color:white;
+border:1px solid rgba(180,212,85,.7);
+}
+
+.btnPrimary:hover{
+background:linear-gradient(135deg,#b4d455,#7ca22e);
 }
 
 /* REEL */
 
 .carousel{
-border-radius:20px;
+border-radius:22px;
 overflow:hidden;
-border:1px solid var(--stroke);
-background:var(--card);
-margin-bottom:20px;
+border:1px solid rgba(255,255,255,.16);
+background:rgba(255,255,255,.035);
+margin-bottom:16px;
 position:relative;
+box-shadow:0 24px 60px rgba(0,0,0,.42);
 }
 
 .carousel-track{
@@ -128,7 +175,8 @@ transition:transform .4s ease;
 
 .slide{
 min-width:100%;
-height:280px;
+height:480px;
+overflow:hidden;
 }
 
 .slide video,
@@ -136,51 +184,208 @@ height:280px;
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
+transition:transform .5s ease;
 }
 
-/* dots */
+.slide:hover video,
+.slide:hover img{
+transform:scale(1.015);
+}
 
 .dots{
 display:flex;
 justify-content:center;
-gap:6px;
-padding:10px;
+gap:8px;
+padding:12px;
+position:absolute;
+bottom:4px;
+left:0;
+right:0;
+z-index:5;
 }
 
 .dot{
-width:8px;
-height:8px;
+width:9px;
+height:9px;
 border-radius:100px;
-background:rgba(255,255,255,.3);
+background:rgba(255,255,255,.5);
+box-shadow:0 1px 4px rgba(0,0,0,.4);
 }
 
 .dot.active{
 background:var(--accent);
 }
 
-/* CONTACT */
+/* dots */
 
-.contact{
+.services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+margin:16px 0;
+}
+
+.serviceCard{
+min-height:170px;
+padding:24px 18px;
 text-align:center;
-background:var(--card);
-border:1px solid var(--stroke);
 border-radius:18px;
-padding:18px;
+background:linear-gradient(
+180deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.025)
+);
+border:1px solid rgba(255,255,255,.14);
+box-shadow:0 16px 35px rgba(0,0,0,.22);
+transition:
+transform .2s ease,
+border-color .2s ease,
+background .2s ease;
+}
+
+.serviceCard:hover{
+transform:translateY(-3px);
+border-color:rgba(180,212,85,.6);
+background:rgba(180,212,85,.06);
+}
+
+.serviceIcon{
+font-size:30px;
+line-height:1;
+color:var(--accent);
+margin-bottom:14px;
+}
+
+.serviceCard h3{
+font-size:17px;
+margin:0 0 10px;
+color:#fff;
+}
+
+.serviceCard p{
+font-size:14px;
+line-height:1.5;
+margin:0;
+color:rgba(255,255,255,.72);
+}
+/* CONTACT */
+<section class="services">
+
+<div class="serviceCard">
+<div class="serviceIcon">▣</div>
+<h3>High Quality</h3>
+<p>Cinematic drone footage captured in stunning high resolution.</p>
+</div>
+
+<div class="serviceCard">
+<div class="serviceIcon">ϟ</div>
+<h3>Fast Turnaround</h3>
+<p>Quick delivery without compromising quality.</p>
+</div>
+
+<div class="serviceCard">
+<div class="serviceIcon">♢</div>
+<h3>Fully Licensed</h3>
+<p>FAA Part 107 certified and fully insured.</p>
+</div>
+
+<div class="serviceCard">
+<div class="serviceIcon">●</div>
+<h3>Local to You</h3>
+<p>Proudly serving Jacksonville and Eastern North Carolina.</p>
+</div>
+
+</section>
+.contact{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+align-items:center;
+gap:28px;
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.025)
+);
+border:1px solid rgba(255,255,255,.16);
+border-radius:20px;
+padding:28px 32px;
+box-shadow:0 20px 45px rgba(0,0,0,.28);
+}
+
+.contactInfo{
+text-align:left;
+padding-right:28px;
+border-right:1px solid rgba(255,255,255,.18);
+}
+
+.contactName{
+font-size:24px;
+font-weight:800;
+color:white;
+margin:0 0 14px;
+}
+
+.contactLine{
+display:flex;
+align-items:flex-start;
+gap:12px;
+margin:10px 0;
+color:rgba(255,255,255,.84);
+}
+
+.contactIcon{
+width:24px;
+color:var(--accent);
+font-weight:800;
+text-align:center;
+flex-shrink:0;
+}
+
+.contactLine a{
+color:inherit;
+text-decoration:none;
+overflow-wrap:anywhere;
+}
+
+.contactLine a:hover{
+color:var(--accent);
 }
 
 .contactButtons{
-margin-top:12px;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin:0;
+}
+
+.contactButtons .btn{
+width:100%;
+min-height:74px;
+flex-direction:column;
+padding:12px;
+}
+
+.buttonTitle{
+display:block;
+font-size:18px;
+font-weight:700;
+}
+
+.buttonSubtext{
+display:block;
+font-size:12px;
+font-weight:400;
+opacity:.8;
 }
 
 .footer{
-margin-top:14px;
+margin-top:24px;
+padding-top:18px;
 text-align:center;
-font-size:12px;
-color:rgba(255,255,255,.6);
+font-size:13px;
+color:rgba(255,255,255,.55);
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 </style>
@@ -212,11 +417,19 @@ and <span class="accent">Fast</span> Turnaround.
 
 <div class="buttons">
 
-<a class="btn" href="https://instagram.com/the.drone.guy.five" target="_blank">
+<a class="btn"
+href="https://instagram.com/the.drone.guy.five"
+target="_blank"
+rel="noopener noreferrer">
+<span>◎</span>
 Instagram
 </a>
 
-<a class="btn" href="https://www.tiktok.com/@the.drone.guy.5?lang=en" target="_blank">
+<a class="btn"
+href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
+target="_blank"
+rel="noopener noreferrer">
+<span>♪</span>
 TikTok
 </a>
 
@@ -260,16 +473,47 @@ TikTok
 
 <p>thedroneguyfive@gmail.com</p>
 
+<div class="contact" id="contact">
+
+<div class="contactInfo">
+
+<p class="contactName">Ray Price</p>
+
+<div class="contactLine">
+<span class="contactIcon">●</span>
+<a href="tel:9109398560">910-939-8560</a>
+</div>
+
+<div class="contactLine">
+<span class="contactIcon">✉</span>
+<a href="mailto:thedroneguyfive@gmail.com">
+thedroneguyfive@gmail.com
+</a>
+</div>
+
+<div class="contactLine">
+<span class="contactIcon">⌖</span>
+<span>Jacksonville, North Carolina</span>
+</div>
+
+</div>
+
 <div class="contactButtons">
 
 <a class="btn btnPrimary"
 href="mailto:thedroneguyfive@gmail.com?subject=Drone Booking Request">
-Email
+
+<span class="buttonTitle">✉ Email Me</span>
+<span class="buttonSubtext">Send a Booking Request</span>
+
 </a>
 
 <a class="btn"
 href="tel:9109398560">
-Call
+
+<span class="buttonTitle">☎ Call Me</span>
+<span class="buttonSubtext">910-939-8560</span>
+
 </a>
 
 </div>
@@ -329,3 +573,182 @@ update()
 
 </body>
 </html>
+/* TABLETS */
+
+@media (max-width:900px){
+
+.wrap{
+max-width:760px;
+}
+
+.title{
+font-size:46px;
+}
+
+.slide{
+height:400px;
+}
+
+.services{
+grid-template-columns:repeat(2,1fr);
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+.contactInfo{
+padding-right:0;
+padding-bottom:22px;
+border-right:0;
+border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+}
+
+/* MOBILE PHONES */
+
+@media (max-width:600px){
+
+body{
+padding:16px 12px 30px;
+}
+
+.header{
+justify-content:center;
+gap:12px;
+}
+
+.logo{
+width:50px;
+height:50px;
+border-radius:14px;
+}
+
+.logo img{
+width:34px;
+height:34px;
+}
+
+.title{
+font-size:34px;
+letter-spacing:-1px;
+}
+
+.headline{
+font-size:15px;
+line-height:1.45;
+max-width:350px;
+margin:16px auto 20px;
+padding:0 8px;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:20px;
+}
+
+.buttons .btn{
+width:100%;
+min-width:0;
+padding:12px 8px;
+font-size:14px;
+}
+
+.carousel{
+border-radius:16px;
+}
+
+.slide{
+height:230px;
+}
+
+.dots{
+padding:8px;
+}
+
+.services{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin:12px 0;
+}
+
+.serviceCard{
+min-height:150px;
+padding:18px 12px;
+border-radius:15px;
+}
+
+.serviceIcon{
+font-size:25px;
+margin-bottom:10px;
+}
+
+.serviceCard h3{
+font-size:15px;
+}
+
+.serviceCard p{
+font-size:12px;
+}
+
+.contact{
+padding:22px 16px;
+gap:20px;
+border-radius:17px;
+}
+
+.contactName{
+font-size:22px;
+}
+
+.contactLine{
+font-size:14px;
+}
+
+.contactButtons{
+grid-template-columns:1fr;
+}
+
+.contactButtons .btn{
+min-height:64px;
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+}
+
+}
+
+/* EXTRA-SMALL PHONES */
+
+@media (max-width:380px){
+
+.header{
+align-items:center;
+}
+
+.title{
+font-size:29px;
+}
+
+.headline{
+font-size:14px;
+}
+
+.services{
+grid-template-columns:1fr;
+}
+
+.serviceCard{
+min-height:auto;
+}
+
+.slide{
+height:205px;
+}
+
+}
