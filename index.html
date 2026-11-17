@@ -1,40 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1"
->
-
-<meta
-name="description"
-content="Professional drone photography and videography by The Drone Guy, serving Jacksonville and Eastern North Carolina."
->
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Professional drone photography and videography by The Drone Guy, serving Jacksonville and Eastern North Carolina." name="description"/>
 <title>The Drone Guy | Professional Drone Footage</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
->
-
-<link
-href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
-rel="stylesheet"
->
-
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
->
-
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
 <style>
 
 /* ==============================
@@ -854,467 +829,214 @@ height:205px;
 
 }
 
+
+/* Portfolio updates */
+.headline{margin:10px auto 7px;font-size:21px;font-weight:700;line-height:1.5;}
+.headlineSubtitle{max-width:700px;margin:0 auto 24px;text-align:center;color:var(--text-soft);font-size:15px;line-height:1.5;}
+.veteranTag{text-align:center;margin:18px auto 0;color:var(--green);font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;}
+.bookingTop{background:linear-gradient(135deg,#afd244,var(--green-dark));border-color:var(--green-border);}
+.slideCaption{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:48px 72px 38px;color:white;background:linear-gradient(transparent,rgba(0,0,0,.78));pointer-events:none;display:flex;flex-direction:column;gap:5px;text-shadow:0 2px 6px rgba(0,0,0,.65);}
+.slideCaption strong{font-size:23px;line-height:1.15;}
+.slideCaption span{font-size:14px;color:rgba(255,255,255,.9);}
+@media(max-width:600px){.headline{font-size:15px;margin-bottom:7px;}.headlineSubtitle{font-size:13px;margin-bottom:18px;padding:0 8px;}.slideCaption{padding:38px 44px 30px;}.slideCaption strong{font-size:17px;}.slideCaption span{font-size:12px;}.bookingTop{grid-column:1/-1;}}
+
+/* Center the logo and site name together, and tighten the header spacing. */
+.header{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  min-height:76px;
+  margin-bottom:0;
+}
+.header .logo{
+  position:static;
+  transform:none;
+}
+.header .logo:hover{
+  transform:rotate(4deg) scale(1.04);
+}
+.header .title{
+  margin:0;
+  text-align:left;
+}
+.veteranTag{margin-top:5px;}
+@media(max-width:600px){
+  .header{min-height:58px;gap:10px;}
+  .header .title{font-size:clamp(24px, 6.3vw, 34px);}
+}
+@media(max-width:380px){
+  .header{min-height:52px;gap:8px;}
+  .header .title{font-size:clamp(22px, 6.2vw, 29px);}
+}
 </style>
-
 </head>
-
 <body>
-
 <main class="wrap">
-
 <!-- HEADER -->
-
 <header class="header">
-
 <div class="logo">
-
-<img
-src="drone-logo.svg"
-alt="The Drone Guy logo"
->
-
+<img alt="The Drone Guy logo" src="drone-logo.svg"/>
 </div>
-
 <h1 class="title">
 The Drone Guy
 </h1>
-
 </header>
-
 <!-- HEADLINE -->
-
-<p class="headline">
-
-<span class="accent">
-Professional
-</span>
-
-Drone Footage,
-
-<span class="accent">
-Clean
-</span>
-
-Delivery, and
-
-<span class="accent">
-Fast
-</span>
-
-Turnaround.
-
-</p>
-
+<p class="veteranTag">Veteran Owned &amp; Operated</p>
+<p class="headline"><span class="accent">Your World. A Different Perspective.</span></p><p class="headlineSubtitle">Professional aerial photography and video for events, businesses, and everything in between.</p>
 <!-- SOCIAL BUTTONS -->
-
-<nav
-class="buttons"
-aria-label="Social media links"
->
-
-<a
-class="btn"
-href="https://instagram.com/the.drone.guy.five"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Visit The Drone Guy on Instagram"
->
-
-<i
-class="fa-brands fa-instagram"
-aria-hidden="true"
-></i>
+<nav aria-label="Social media links" class="buttons">
+<a aria-label="Visit The Drone Guy on Instagram" class="btn" href="https://instagram.com/the.drone.guy.five" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-instagram"></i>
 
 Instagram
 
 </a>
-
-<a
-class="btn"
-href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Visit The Drone Guy on TikTok"
->
-
-<i
-class="fa-brands fa-tiktok"
-aria-hidden="true"
-></i>
+<a aria-label="Visit The Drone Guy on TikTok" class="btn" href="https://www.tiktok.com/@the.drone.guy.5?lang=en" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-tiktok"></i>
 
 TikTok
 
 </a>
-
-</nav>
-
+<a class="btn btnPrimary bookingTop" href="#contact">Book a Flight</a></nav>
 <!-- CAROUSEL -->
-
-<section
-class="carousel"
-aria-label="Drone footage portfolio"
->
-
-<div
-class="carousel-track"
-id="track"
->
-
-<!-- VIDEO 1 -->
-
-<div class="slide">
-
-<video
-autoplay
-muted
-loop
-playsinline
-preload="metadata"
->
-
-<source
-src="reel1.mp4"
-type="video/mp4"
->
-
-Your browser does not support video playback.
-
-</video>
-
-</div>
-
-<!-- PHOTO -->
-
-<div class="slide">
-
-<img
-src="reel2.jpg"
-alt="Aerial drone photograph by The Drone Guy"
->
-
-</div>
-
-<!-- VIDEO 2 -->
-
-<div class="slide">
-
-<video
-autoplay
-muted
-loop
-playsinline
-preload="metadata"
->
-
-<source
-src="reel3.mp4"
-type="video/mp4"
->
-
-Your browser does not support video playback.
-
-</video>
-
-</div>
-
-</div>
-
-<button
-class="carouselArrow previous"
-id="previousButton"
-type="button"
-aria-label="Show previous portfolio item"
->
+<section aria-label="Drone footage portfolio" class="carousel">
+<div class="carousel-track" id="track"><div class="slide"><img alt="Nighttime Car Meet drone photograph" loading="lazy" src="media/car-meet-night.jpg"/><div class="slideCaption"><strong>Nighttime Car Meet</strong><span>Automotive photography</span></div></div><div class="slide"><video aria-label="Automotive Action drone video" controls="" loop="" muted="" playsinline="" preload="metadata"><source src="media/automotive-action.mp4" type="video/mp4"/>Your browser does not support video playback.</video><div class="slideCaption"><strong>Automotive Action</strong><span>Motion from a new perspective</span></div></div><div class="slide"><img alt="Wreaths Across America drone photograph" loading="lazy" src="media/wreaths-across-america.jpg"/><div class="slideCaption"><strong>Wreaths Across America</strong><span>Honoring our community</span></div></div><div class="slide"><img alt="Miles for Mammos drone photograph" loading="lazy" src="media/miles-for-mammos.jpg"/><div class="slideCaption"><strong>Miles for Mammos</strong><span>Community events from above</span></div></div><div class="slide"><video aria-label="Community in Motion drone video" controls="" loop="" muted="" playsinline="" preload="metadata"><source src="media/community-event.mp4" type="video/mp4"/>Your browser does not support video playback.</video><div class="slideCaption"><strong>Community in Motion</strong><span>Events worth remembering</span></div></div><div class="slide"><video aria-label="Burnout Action drone video" controls="" loop="" muted="" playsinline="" preload="metadata"><source src="media/burnout-action.mp4" type="video/mp4"/>Your browser does not support video playback.</video><div class="slideCaption"><strong>Burnout Action</strong><span>Automotive videography</span></div></div><div class="slide"><img alt="Turkey Trot drone photograph" loading="lazy" src="media/turkey-trot.jpg"/><div class="slideCaption"><strong>Turkey Trot</strong><span>The crowd from above</span></div></div><div class="slide"><img alt="A Different Perspective drone photograph" loading="lazy" src="media/cinematic-aerial.jpg"/><div class="slideCaption"><strong>A Different Perspective</strong><span>Cinematic aerial photography</span></div></div></div>
+<button aria-label="Show previous portfolio item" class="carouselArrow previous" id="previousButton" type="button">
 
 ‹
 
 </button>
-
-<button
-class="carouselArrow next"
-id="nextButton"
-type="button"
-aria-label="Show next portfolio item"
->
+<button aria-label="Show next portfolio item" class="carouselArrow next" id="nextButton" type="button">
 
 ›
 
 </button>
-
-<div
-class="dots"
-id="dots"
-aria-label="Portfolio slide controls"
-></div>
-
+<div aria-label="Portfolio slide controls" class="dots" id="dots"></div>
 </section>
-
 <!-- SERVICES -->
-
-<section
-class="services"
-aria-label="Why choose The Drone Guy"
->
-
+<section aria-label="Why choose The Drone Guy" class="services">
 <article class="serviceCard">
-
 <div class="serviceIcon">
-
-<i
-class="fa-solid fa-camera"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-camera"></i>
 </div>
-
 <h2>
 High Quality
 </h2>
-
 <p>
 Cinematic drone footage captured in stunning high resolution.
 </p>
-
 </article>
-
 <article class="serviceCard">
-
 <div class="serviceIcon">
-
-<i
-class="fa-solid fa-bolt"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-bolt"></i>
 </div>
-
 <h2>
 Fast Turnaround
 </h2>
-
 <p>
 Quick delivery without compromising the quality of your footage.
 </p>
-
 </article>
-
 <article class="serviceCard">
-
 <div class="serviceIcon">
-
-<i
-class="fa-solid fa-shield-halved"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-shield-halved"></i>
 </div>
-
 <h2>
 FAA Certified
 </h2>
-
 <p>
 Professional FAA Part 107 licensed drone pilot.
 </p>
-
 </article>
-
 <article class="serviceCard">
-
 <div class="serviceIcon">
-
-<i
-class="fa-solid fa-location-dot"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-location-dot"></i>
 </div>
-
 <h2>
 Local to You
 </h2>
-
 <p>
 Proudly serving Jacksonville and Eastern North Carolina.
 </p>
-
 </article>
-
 </section>
-
 <!-- CONTACT -->
-
-<section
-class="contact"
-id="contact"
-aria-label="Contact The Drone Guy"
->
-
+<section aria-label="Contact The Drone Guy" class="contact" id="contact">
 <div class="contactInfo">
-
 <h2 class="contactName">
 Ray Price
 </h2>
-
 <div class="contactLine">
-
 <span class="contactIcon">
-
-<i
-class="fa-solid fa-phone"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-phone"></i>
 </span>
-
 <a href="tel:9109398560">
 910-939-8560
 </a>
-
 </div>
-
 <div class="contactLine">
-
 <span class="contactIcon">
-
-<i
-class="fa-solid fa-envelope"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
 </span>
-
 <a href="mailto:thedroneguyfive@gmail.com">
 thedroneguyfive@gmail.com
 </a>
-
 </div>
-
 <div class="contactLine">
-
 <span class="contactIcon">
-
-<i
-class="fa-solid fa-location-dot"
-aria-hidden="true"
-></i>
-
+<i aria-hidden="true" class="fa-solid fa-location-dot"></i>
 </span>
-
 <span>
 Jacksonville, North Carolina
 </span>
-
 </div>
-
 </div>
-
 <div class="contactButtons">
-
-<a
-class="btn btnPrimary"
-href="mailto:thedroneguyfive@gmail.com?subject=Drone%20Booking%20Request"
->
-
+<a class="btn btnPrimary" href="mailto:thedroneguyfive@gmail.com?subject=Drone%20Booking%20Request">
 <span class="buttonTitle">
-
-<i
-class="fa-solid fa-envelope"
-aria-hidden="true"
-></i>
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
 
 Email Me
 
 </span>
-
 <span class="buttonSubtext">
 Send a booking request
 </span>
-
 </a>
-
-<a
-class="btn"
-href="tel:9109398560"
->
-
+<a class="btn" href="tel:9109398560">
 <span class="buttonTitle">
-
-<i
-class="fa-solid fa-phone"
-aria-hidden="true"
-></i>
+<i aria-hidden="true" class="fa-solid fa-phone"></i>
 
 Call Me
 
 </span>
-
 <span class="buttonSubtext">
 910-939-8560
 </span>
-
 </a>
-
 </div>
-
 </section>
-
 <!-- FOOTER -->
-
 <footer class="footer">
-
 <div class="footerLinks">
-
-<a
-href="https://instagram.com/the.drone.guy.five"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Instagram"
->
-
-<i
-class="fa-brands fa-instagram"
-aria-hidden="true"
-></i>
-
+<a aria-label="Instagram" href="https://instagram.com/the.drone.guy.five" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-instagram"></i>
 </a>
-
-<a
-href="https://www.tiktok.com/@the.drone.guy.5?lang=en"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="TikTok"
->
-
-<i
-class="fa-brands fa-tiktok"
-aria-hidden="true"
-></i>
-
+<a aria-label="TikTok" href="https://www.tiktok.com/@the.drone.guy.5?lang=en" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-tiktok"></i>
 </a>
-
-<a
-href="mailto:thedroneguyfive@gmail.com"
-aria-label="Email The Drone Guy"
->
-
-<i
-class="fa-solid fa-envelope"
-aria-hidden="true"
-></i>
-
+<a aria-label="Email The Drone Guy" href="mailto:thedroneguyfive@gmail.com">
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
 </a>
-
 </div>
-
 <div>
 © 2026 The Drone Guy. All rights reserved.
 </div>
-
 </footer>
-
 </main>
-
 <script>
 
 /* ==============================
@@ -1376,6 +1098,15 @@ document.querySelectorAll(".dot")
 /* Update carousel */
 
 function updateCarousel(){
+  slides.forEach((slide, index) => {
+    const video = slide.querySelector('video');
+    if (!video) return;
+    if (index === currentIndex) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
 
 track.style.transform =
 `translateX(-${currentIndex * 100}%)`;
@@ -1488,7 +1219,5 @@ showNextSlide();
 updateCarousel();
 
 </script>
-
 </body>
-
 </html>
