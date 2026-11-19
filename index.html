@@ -905,11 +905,11 @@ TikTok
 <section aria-label="Drone footage portfolio" class="carousel">
 <div class="carousel-track" id="track">
   <div class="slide">
-    <video aria-label="Overhead Burnout drone video" loop muted playsinline preload="metadata" poster="burnout-overhead.jpg"><source src="burnout-overhead.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
+    <video aria-label="Overhead Burnout drone video" muted playsinline preload="metadata" poster="burnout-overhead.jpg"><source src="burnout-overhead.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
     
   </div>
   <div class="slide">
-    <video aria-label="Miles for Mammos finish line aerial video" loop muted playsinline preload="none" poster="finish-line.jpg"><source src="finish-line.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
+    <video aria-label="Miles for Mammos finish line aerial video" muted playsinline preload="none" poster="finish-line.jpg"><source src="finish-line.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
     
   </div>
   <div class="slide">
@@ -917,7 +917,7 @@ TikTok
     <div class="slideCaption"><strong>Nighttime Car Meet</strong><span>Automotive photography</span></div>
   </div>
   <div class="slide">
-    <video aria-label="Motorcycle Action drone video" loop muted playsinline preload="none" poster="coffee-bike-stunts.jpg"><source src="coffee-bike-stunts.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
+    <video aria-label="Motorcycle Action drone video" muted playsinline preload="none" poster="coffee-bike-stunts.jpg"><source src="coffee-bike-stunts.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
     
   </div>
   <div class="slide">
@@ -925,11 +925,11 @@ TikTok
     <div class="slideCaption"><strong>Wreaths Across America</strong><span>Honoring our community</span></div>
   </div>
   <div class="slide">
-    <video aria-label="Nighttime Flyover drone video" loop muted playsinline preload="none" poster="night-flyover.jpg"><source src="night-flyover.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
+    <video aria-label="Nighttime Flyover drone video" muted playsinline preload="none" poster="night-flyover.jpg"><source src="night-flyover.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
     
   </div>
   <div class="slide">
-    <video aria-label="Burnout Tracking Shot drone video" loop muted playsinline preload="none" poster="burnout-chase.jpg"><source src="burnout-chase.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
+    <video aria-label="Burnout Tracking Shot drone video" muted playsinline preload="none" poster="burnout-chase.jpg"><source src="burnout-chase.mp4" type="video/mp4"/>Your browser does not support video playback.</video>
     
   </div>
 </div>
@@ -1091,6 +1091,8 @@ document.getElementById("nextButton");
 
 let currentIndex = 0;
 let startX = 0;
+let rotationTimer;
+let playbackGeneration = 0;
 
 /* Create navigation dots */
 
@@ -1127,15 +1129,29 @@ document.querySelectorAll(".dot")
 /* Update carousel */
 
 function updateCarousel(){
-  slides.forEach((slide, index) => {
+  clearTimeout(rotationTimer);
+  const generation = ++playbackGeneration;
+  slides.forEach(slide => {
     const video = slide.querySelector('video');
-    if (!video) return;
-    if (index === currentIndex) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
+    if (video) { video.pause(); video.onended = null; video.onerror = null; }
   });
+  const video = slides[currentIndex].querySelector('video');
+  const advance = () => {
+    if (generation === playbackGeneration) showNextSlide();
+  };
+  if (video) {
+    video.currentTime = 0;
+    video.onended = advance;
+    video.onerror = advance;
+    rotationTimer = setTimeout(advance, 15000);
+    video.play().catch(() => {
+      if (generation !== playbackGeneration) return;
+      clearTimeout(rotationTimer);
+      rotationTimer = setTimeout(advance, 5000);
+    });
+  } else {
+    rotationTimer = setTimeout(advance, 5000);
+  }
 
 track.style.transform =
 `translateX(-${currentIndex * 100}%)`;
