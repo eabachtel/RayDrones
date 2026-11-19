@@ -870,6 +870,22 @@ height:205px;
   .header{min-height:52px;gap:8px;}
   .header .title{font-size:clamp(22px, 6.2vw, 29px);}
 }
+
+/* Compact mobile header only */
+@media (max-width:600px){
+  body{padding-top:12px;}
+  .header{min-height:44px;gap:9px;}
+  .header .logo{width:44px;height:44px;border-radius:12px;}
+  .header .logo img{width:40px;height:40px;transform:none;}
+  .header .title{font-size:clamp(21px,7vw,30px);letter-spacing:-.8px;}
+  .veteranTag{font-size:10px;letter-spacing:1px;margin:5px auto 0;}
+  .headline{font-size:13px;line-height:1.3;margin:8px auto 12px;}
+  .headlineSubtitle{display:none;}
+  .buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:12px;}
+  .buttons .btn{min-height:38px;padding:7px 3px;font-size:clamp(10px,3vw,13px);gap:4px;white-space:nowrap;}
+  .buttons .btn i{font-size:14px;}
+  .buttons .bookingTop{grid-column:auto;}
+}
 </style>
 </head>
 <body>
